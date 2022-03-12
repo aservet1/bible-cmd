@@ -1,33 +1,33 @@
-OBJS = src/kjv_main.o \
-       src/kjv_match.o \
-       src/kjv_ref.o \
-       src/kjv_render.o \
+OBJS = src/bible_main.o \
+       src/bible_match.o \
+       src/bible_ref.o \
+       src/bible_render.o \
        src/intset.o \
        src/strutil.o \
-       data/kjv_data.o
+       data/bible_data.o
 CFLAGS += -Wall -Isrc/
 LDLIBS += -lreadline
 
-kjv: $(OBJS)
+bible: $(OBJS)
 	$(CC) -o $@ $(LDFLAGS) $(OBJS) $(LDLIBS)
 
-src/kjv_main.o: src/kjv_main.c src/kjv_config.h src/kjv_data.h src/kjv_match.h src/kjv_ref.h src/kjv_render.h src/strutil.h
+src/bible_main.o: src/bible_main.c src/bible_config.h src/bible_data.h src/bible_match.h src/bible_ref.h src/bible_render.h src/strutil.h
 
-src/kjv_match.o: src/kjv_match.h src/kjv_match.c src/kjv_config.h src/kjv_data.h src/kjv_ref.h
+src/bible_match.o: src/bible_match.h src/bible_match.c src/bible_config.h src/bible_data.h src/bible_ref.h
 
-src/kjv_ref.o: src/kjv_ref.h src/kjv_ref.c src/intset.h src/kjv_data.h
+src/bible_ref.o: src/bible_ref.h src/bible_ref.c src/intset.h src/bible_data.h
 
-src/kjv_render.o: src/kjv_render.h src/kjv_render.c src/kjv_config.h src/kjv_data.h src/kjv_match.h src/kjv_ref.h
+src/bible_render.o: src/bible_render.h src/bible_render.c src/bible_config.h src/bible_data.h src/bible_match.h src/bible_ref.h
 
 src/insetset.o: src/intset.h src/insetset.c
 
 src/strutil.o: src/strutil.h src/strutil.c
 
-data/kjv_data.o: src/kjv_data.h data/kjv_data.c
+data/bible_data.o: src/bible_data.h data/bible_data.c
 
-data/kjv_data.c: data/kjv.tsv data/generate.awk src/kjv_data.h
+data/bible_data.c: data/kjv.tsv data/generate.awk src/bible_data.h
 	awk -f data/generate.awk $< > $@
 
 .PHONY: clean
 clean:
-	rm -rf $(OBJS) kjv
+	rm -rf $(OBJS) bible
