@@ -1,3 +1,6 @@
+# A note from the Forker
+Taking this cool idea to play around with this and come up with other ideas that are useful to me. Can involve programs that grab bible verses or analyze bible verses, or adds support for other books to index. This repo is not KJV only and I expect most traces of KVJ exclusivity will be gone, although that's not a promise or a decree. Just making it clear that this repo is not married to the idea of being a KJV only repo at this time.
+
 <a href="https://archive.org/details/new-world-order-bible-versions-full-movie" title="Why the King James Bible?"><img src="https://i.imgur.com/A9piMKc.png" width="250" align="right"></a>
 
 # kjv [![AUR](https://img.shields.io/badge/AUR-kjv--git-blue.svg)](https://aur.archlinux.org/packages/kjv-git/)
