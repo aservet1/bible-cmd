@@ -1,3 +1,5 @@
 /kjv
 *.o
 /data/kjv_data.c
+
+*.swp
