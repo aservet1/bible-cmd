@@ -30,4 +30,4 @@ data/bible_data.c: data/kjv.tsv data/generate.awk src/bible_data.h
 
 .PHONY: clean
 clean:
-	rm -rf $(OBJS) bible
+	rm -rf $(OBJS) bible data/bible_data.c
