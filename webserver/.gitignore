@@ -1,0 +1,9 @@
+# production
+/build
+
+# java stuff
+*.class
+
+# mymisc
+*.swp
+.eslintcache
