@@ -67,9 +67,9 @@ public class BibleServer implements Runnable {
 			String fileRequested = parse.nextToken().toLowerCase();
 
 			if (method.equals("GET")) { // we only support GET method
-				String response = RequestHandler.handle(fileRequested);
-				String header = response.split("\n\n")[0];
-				String body = response.split("\n\n")[1];
+				Response resp = RequestHandler.handle(fileRequested);
+				String header = resp.header;
+				byte[] body   = resp.body;
 
 				if (verbose) {
 					System.out.println("----- GET Response Header -----");
@@ -82,7 +82,7 @@ public class BibleServer implements Runnable {
 				headerOut.println(header);
 				headerOut.println(); // blank line between headers and content, very important !
 				headerOut.flush();
-				dataOut.write(body.getBytes(), 0, body.length());
+				dataOut.write(body, 0, body.length);
 				dataOut.flush();
 			}
 			else { // Method not supported
