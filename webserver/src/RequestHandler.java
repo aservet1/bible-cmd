@@ -27,10 +27,8 @@ class Response {
 }
 class RequestHandler {
 
-	private static final String WEB_ROOT = "./public/";
-
 	private static byte[] getPageBytes(String fileRequested) {
-		String filePath = WEB_ROOT + fileRequested;
+		String filePath = BibleServer.WEB_ROOT + fileRequested;
 		byte[] contents = null;
 		FileInputStream inputStream = null;
 		try {

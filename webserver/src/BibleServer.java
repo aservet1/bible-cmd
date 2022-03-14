@@ -17,6 +17,8 @@ import java.util.StringTokenizer;
 // Each Client Connection will be managed in a dedicated Thread
 public class BibleServer implements Runnable {
 
+	public static final String WEB_ROOT = "./public/";
+
 	public static void main(String[] args) {
 		// have some code in here that ensures that all necessary files are in the right place
 		startServer();
