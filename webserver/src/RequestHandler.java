@@ -75,7 +75,7 @@ class RequestHandler {
 				success = ! resp.body.equals(Pages.NOT_FOUND.getBytes());
 				break;
 			case "/booktext":
-				String cmd = queryMap.get("cmd").replace("_"," ");
+				String cmd = "./bookcmds/" + queryMap.get("cmd").replace("_"," ");
 				resp.body = runShellCmd(cmd).getBytes();
 				mimeType = "text/plain";
 				success = true;
