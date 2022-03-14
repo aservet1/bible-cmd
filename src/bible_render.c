@@ -81,7 +81,7 @@ bible_output(const bible_ref *ref, FILE *f, const bible_config *config)
                 f,
                 config->highlighting ?
                     ESC_UNDERLINE "%s" ESC_RESET " " ESC_BOLD "%d:%d" ESC_RESET "  %s\n" :
-                    "%s %d:%d  %s\n",
+                    "%s\t%d:%d\t%s\n",
                 book->name,
                 verse->chapter,
                 verse->verse,
