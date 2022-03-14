@@ -74,7 +74,7 @@ class RequestHandler {
 				mimeType = "text/html";
 				success = ! resp.body.equals(Pages.NOT_FOUND.getBytes());
 				break;
-			case "/booktext":
+			case "/api/booktext":
 				String cmd = "./bookcmds/" + queryMap.get("cmd").replace("_"," ");
 				resp.body = runShellCmd(cmd).getBytes();
 				mimeType = "text/plain";
