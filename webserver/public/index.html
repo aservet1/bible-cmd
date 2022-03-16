@@ -27,17 +27,18 @@
         }
         function parseBookText(bookText) {
             return bookText.split('\n').reduce(
-                (accumulator, item) => {
-                    let parts   = item.split('\t')
+                (parsedBook, line) => {
+                    // bookText line format: 'Book\tChapter:Verse\tVerseText'
+                    let parts   = line.split('\t')
                     let chverse = parts[1].split(':')
                     let book    = parts[0]
                     let chapter = chverse[0]
                     let verse   = chverse[1]
                     let verseText = parts[2]
-                    if (!accumulator[book])          { accumulator[book]           =  {} }
-                    if (!accumulator[book][chapter]) { accumulator[book][chapter]  =  {} }
-                    accumulator[book][chapter][verse] = verseText
-                    return accumulator
+                    if (!parsedBook[book])          { parsedBook[book]           =  {} }
+                    if (!parsedBook[book][chapter]) { parsedBook[book][chapter]  =  {} }
+                    parsedBook[book][chapter][verse] = verseText
+                    return parsedBook
                 }, {}
             )
         }
@@ -45,14 +46,14 @@
             let str = '';
             str += '<ul>'
             for (const [book, chapters] of Object.entries(parseBookText(text))) {
-                str += '<li>'+book
+                str += '<li><b>' + book + '</b>'
                 str += '<ul>'
                 for (const [chapter,verses] of Object.entries(chapters)) {
-                    str += '<li>' + chapter
+                    str += '<li><b>Chapter ' + chapter + ':</b>'
                     str += '<ul>'
                     for (const [verse,verseText] of Object.entries(verses)) {
                         str += '<li>'
-                        str += verse + ': ' + verseText
+                        str += '<b>'+verse+'.</b> ' + verseText
                         str += '</li>'
                     }
                     str += '</ul>'
