@@ -1,4 +1,11 @@
 <html>
+    <script>
+
+    </script>
+
+
+
+
 	<title>BibleCmd</title>
 	<body>
 		<h1>Hi hello</h1>
@@ -8,12 +15,73 @@
 		<a href='tc3_first_website/about_page.html'>My first website</a>
 	</body>
 	<script>
+        function httpGetAsync(theUrl, callback)
+        { // thanks to https://stackoverflow.com/questions/247483/http-get-request-in-javascript
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() { 
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                    callback(xmlHttp.responseText);
+            }
+            xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+            xmlHttp.send(null);
+        }
+        function parseBookText(bookText) {
+            return bookText.split('\n').reduce(
+                (accumulator, item) => {
+                    let parts   = item.split('\t')
+                    let chverse = parts[1].split(':')
+                    let book    = parts[0]
+                    let chapter = chverse[0]
+                    let verse   = chverse[1]
+                    let verseText = parts[2]
+                    if (!accumulator[book])          { accumulator[book]           =  {} }
+                    if (!accumulator[book][chapter]) { accumulator[book][chapter]  =  {} }
+                    accumulator[book][chapter][verse] = verseText
+                    return accumulator
+                }, {}
+            )
+        }
+        function postProcessBibleTextToHTMLList(text){
+            let str = '';
+            str += '<ul>'
+            for (const [book, chapters] of Object.entries(parseBookText(text))) {
+                str += '<li>'+book
+                str += '<ul>'
+                for (const [chapter,verses] of Object.entries(chapters)) {
+                    str += '<li>' + chapter
+                    str += '<ul>'
+                    for (const [verse,verseText] of Object.entries(verses)) {
+                        str += '<li>'
+                        str += verse + ': ' + verseText
+                        str += '</li>'
+                    }
+                    str += '</ul>'
+                    str += '</li>'
+                }
+                str += '</ul>'
+                str += '</li>'
+            }
+            str += '</ul>'
+            return str // text
+        }
+        function showBibleText(text) {
+            document.getElementById('contentSpot').innerHTML = postProcessBibleTextToHTMLList(text)
+        }
 		function reverseString(str) {
 			let rev = ""
 			for (let i = str.length-1; i >= 0; --i){
 				rev += str[i]
 			} return rev;
 		}
-		document.getElementById('contentSpot').innerText = reverseString('antidisestablishmentarianism')
+		// document.getElementById('contentSpot').innerText = reverseString('antidisestablishmentarianism')
+        httpGetAsync("http://149.28.52.2:8080/api/booktext?cmd=kjv_1_kings_18:1-99", showBibleText)
 	</script>
 </html>
+
+
+
+<!-- number bounds data structure; for info about selecting random chapters and verses
+
+array of length bible.n_books
+  each subitem is an array of length book.n_chapters
+    each item is an array of chapter.n_verses -->
