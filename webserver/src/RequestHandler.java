@@ -75,8 +75,14 @@ class RequestHandler {
 				success = ! resp.body.equals(Pages.NOT_FOUND.getBytes());
 				break;
 			case "/api/booktext":
-				String cmd = "./bookcmds/" + queryMap.get("cmd").replace("_"," ");
-				resp.body = runShellCmd(cmd).getBytes();
+				String[] cmds = (
+					queryMap.get("cmd").replace("_"," ")
+				).split(";");
+				String[] results = new String[cmds.length];
+				for(int i = 0; i < cmds.length; ++i) {
+					results[i] = runShellCmd("./bookcmds/" + cmds[i]);
+				}
+				resp.body = String.join("\n",results).getBytes();
 				mimeType = "text/plain";
 				success = true;
 				break;
