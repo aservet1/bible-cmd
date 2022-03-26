@@ -1,22 +1,45 @@
 <html>
-    <script>
-    </script>
-
 	<title>BibleCmd</title>
 	<body>
 		<h1>Hi hello</h1>
+
+        <input type="radio" id="kjv"        name="book_selection" value="kjv">
+        <label for="kjv">        King James Version         </label>
+        <input type="radio" id="css"        name="book_selection" value="grb">
+        <label for="css">        Greek Version              </label>
+        <input type="radio" id="myapocrypha" name="book_selection" value="myapocrypha">
+        <label for="myapocrypha"> My Apocrypha Collection   </label>
+<br>
         <input
-            type='text' value=''
+            id='asktext'
+            type='text'
         />
         <input
-            type='button' value='hello'
+            id='askbutton'
+            type='button'
+            value='get text'
+        />
+        <input
+            id='askforhelp'
+            type='button'
+            value='help'
+        />
+        <input
+            id='askforbooks'
+            type='button'
+            value='books available'
+        />
+        <input
+            id='askformetainfo'
+            type='button'
+            value='(coming some day) meta information / analysis about this passage'
         />
 		<div id='contentSpot'>
-			This text should be replaced by the time you see the page
+			This text should be replaced when you make a request
 		</div>
 		<a href='tc3_first_website/about_page.html'>My first website</a>
+	    <script src='../scripts/load-webpage.js'> </script>
 	</body>
-	<script src='../scripts/load-webpage.js'> </script>
 </html>
 
 
