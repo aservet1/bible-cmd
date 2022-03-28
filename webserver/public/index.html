@@ -1,48 +1,29 @@
 <html>
-	<title>BibleCmd</title>
+	<title>the Bible.</title>
 	<body>
-		<h1>Hi hello</h1>
-
-        <input type="radio" id="kjv"        name="book_selection" value="kjv">
-        <label for="kjv">        King James Version         </label>
-        <input type="radio" id="css"        name="book_selection" value="grb">
-        <label for="css">        Greek Version              </label>
-        <input type="radio" id="myapocrypha" name="book_selection" value="myapocrypha">
-        <label for="myapocrypha"> My Apocrypha Collection   </label>
-<br>
-        <input
-            id='asktext'
-            type='text'
-        />
-        <input
-            id='askbutton'
-            type='button'
-            value='get text'
-        />
-        <input
-            id='askforhelp'
-            type='button'
-            value='help'
-        />
-        <input
-            id='askforbooks'
-            type='button'
-            value='books available'
-        />
-        <input
-            id='askformetainfo'
-            type='button'
-            value='(coming some day) meta information / analysis about this passage'
-        />
+		<h1>the Bible.</h1>
+		<div id='book-options'>
+			<input type="radio" id="kjv" value="kjv" name="book_selection" >
+			<label for="kjv"> King James Version </label>
+			<input type="radio" id="grb" value="grb" name="book_selection">
+			<label for="grb"> Luke Smith's Greek Version </label>
+			<input type="radio" id="myapocrypha" value="myapocrypha" name="book_selection" >
+			<label for="myapocrypha"> My Apocrypha Collection </label>
+		</div>
+			<input id='asktext' type='text' />
+		<div id='ask-buttons' >
+			<input id='askbutton' type='button' value='get text' />
+			<input id='askforhelp' type='button' value='help' />
+			<input id='askforbooks' type='button' value='books available' />
+			<input id='askformetainfo' type='button' value='(coming some day) meta information / analysis about this passage' />
+		</div>
 		<div id='contentSpot'>
 			This text should be replaced when you make a request
 		</div>
 		<a href='tc3_first_website/about_page.html'>My first website</a>
-	    <script src='js/load-webpage.js'> </script>
+		<script src='js/load-webpage.js'> </script>
 	</body>
 </html>
-
-
 
 <!-- number bounds data structure; for info about selecting random chapters and verses
 
