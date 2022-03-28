@@ -99,7 +99,10 @@ function getBookSelectionName() {
 }
 function getFullURLFromCmd(cmd) {
     return "http://149.28.52.2:8080/api/booktext?cmd=" + (
-        getBookSelectionName() + ' ' + cmd
+        cmd .split(';')
+	    	.map(e => getBookSelectionName() + ' ' + e.trim())
+	    .join(';')
+	//getBookSelectionName() + ' ' + cmd
     ).split(/\s+/).join('_')
 }
 function getBookText(bookrequest) {
@@ -113,6 +116,7 @@ function validInput(text) {
 }
 document.getElementById('askbutton').onclick = (
     function() {
+        showText('waiting for content...')
         let text = document.getElementById('asktext').value
         // console.log(text)
         // TODO: evalate text input for validity, 
@@ -121,7 +125,7 @@ document.getElementById('askbutton').onclick = (
 )
 document.getElementById('askforhelp').onclick = (
     function() {
-        console.log('hello!')
+        showText('hello!')
         httpGetAsync(
             getFullURLFromCmd(getBookSelectionName()+' -help'),
             showText
@@ -130,6 +134,7 @@ document.getElementById('askforhelp').onclick = (
 )
 document.getElementById('askforbooks').onclick = (
     function() {
+        showText('waiting for books...')
         httpGetAsync(
             getFullURLFromCmd(getBookSelectionName()+' -l'),
             showText
