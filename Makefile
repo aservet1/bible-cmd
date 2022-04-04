@@ -29,4 +29,4 @@ data/bible_data.c: data/generate.awk src/bible_data.h
 
 .PHONY: clean
 clean:
-	rm -rf $(OBJS) bible data/bible_data.c
+	rm -rf $(OBJS) ./bin bible data/bible_data.c
