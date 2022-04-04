@@ -141,3 +141,12 @@ document.getElementById('askforbooks').onclick = (
         )
     }
 )
+document.getElementById("kjv_radio_btn").checked = true;
+document.getElementById('asktext').onkeypress = (
+	function(e) {
+		if (e.which == 13) {
+			showText('waiting for content...')
+			getBookText(document.getElementById('asktext').value)
+		}
+	}
+)
