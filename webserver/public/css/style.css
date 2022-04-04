@@ -1,3 +1,41 @@
-body{
-	background-color: BurlyWood;
+body {
+  background-color: Linen
+}
+#book-options {
+  padding-top: 5px;
+  padding-right: 0px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+}
+#book-options {
+  padding-top: 5px;
+  padding-right: 0px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  border-radius: 4px;
+}
+#inputarea {
+  padding-top: 5px;
+  padding-right: 0px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  border-radius: 4px;
+}
+#asktext {
+  width: 290px;
+  height: 25px;
+}
+#ask-buttons {
+  padding-top: 5px;
+  padding-right: 0px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  border-radius: 4px;
+}
+#contentSpot {
+  padding-top: 5px;
+  padding-right: 125px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  border-radius: 4px;
 }
