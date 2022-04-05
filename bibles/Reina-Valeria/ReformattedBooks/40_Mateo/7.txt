@@ -1,0 +1,29 @@
+1	<span class="word">NO juzguéis, para que no seáis juzgados.</span>
+2	<span class="word">Porque con el juicio con que juzgáis, seréis juzgados; y con la medida con que medís, os volverán á medir.</span>
+3	<span class="word">Y ¿por qué miras la mota que está en el ojo de tu hermano, y no echas de ver la viga que está en tu ojo?</span>
+4	<span class="word">O ¿cómo dirás á tu hermano: Espera, echaré de tu ojo la mota, y he aquí la viga en tu ojo?</span>
+5	<span class="word">Hipócrita! echa primero la viga de tu ojo, y entonces mirarás en echar la mota del ojo de tu hermano.</span>
+6	<span class="word">No deis lo santo á los perros, ni echéis vuestras perlas delante de los puercos; porque no las rehuellen con sus pies, y vuelvan y os despedacen.</span>
+7	<span class="word">Pedid, y se os dará; buscad, y hallaréis; llamad, y se os abrirá.</span>
+8	<span class="word">Porque cualquiera que pide, recibe; y el que busca, halla; y al que llama, se abrirá.</span>
+9	<span class="word">¿Qué hombre hay de vosotros, á quien si su hijo pidiere pan, le dará una piedra?</span>
+10	<span class="word">¿Y si le pidiere un pez, le dará una serpiente?</span>
+11	<span class="word">Pues si vosotros, siendo malos, sabéis dar buenas dádivas á vuestros hijos, ¿cuánto más vuestro Padre que está en los cielos, dará buenas cosas á los que le piden?</span>
+12	<span class="word">Así que, todas las cosas que quisierais que los hombres hiciesen con vosotros, así también haced vosotros con ellos; porque esta es la ley y los profetas.</span>
+13	<span class="word">Entrad por la puerta estrecha: porque ancha es la puerta, y espacioso el camino que lleva á perdición, y muchos son los que entran por ella.</span>
+14	<span class="word">Porque estrecha es la puerta, y angosto el camino que lleva á la vida, y pocos son los que la hallan.</span>
+15	<span class="word">Y guardaos de los falsos profetas, que vienen á vosotros con vestidos de ovejas, mas de dentro son lobos rapaces.</span>
+16	<span class="word">Por sus frutos los conoceréis. ¿Cógense uvas de los espinos, ó higos de los abrojos?</span>
+17	<span class="word">Así, todo buen árbol lleva buenos frutos; mas el árbol maleado lleva malos frutos.</span>
+18	<span class="word">No puede el buen árbol llevar malos frutos, ni el árbol maleado llevar frutos buenos.</span>
+19	<span class="word">Todo árbol que no lleva buen fruto, córtase y échase en el fuego.</span>
+20	<span class="word">Así que, por sus frutos los conoceréis.</span>
+21	<span class="word">No todo el que me dice: Señor, Señor, entrará en el reino de los cielos: mas el que hiciere la voluntad de mi Padre que está en los cielos.</span>
+22	<span class="word">Muchos me dirán en aquel día: Señor, Señor, ¿no profetizamos en tu nombre, y en tu nombre lanzamos demonios, y en tu nombre hicimos mucho milagros?</span>
+23	<span class="word">Y entonces les protestaré: Nunca os conocí; apartaos de mí, obradores de maldad.</span>
+24	<span class="word">Cualquiera, pues, que me oye estas palabras, y las hace, le compararé á un hombre prudente, que edificó su casa sobre la peña;</span>
+25	<span class="word">Y descendió lluvia, y vinieron ríos, y soplaron vientos, y combatieron aquella casa; y no cayó: porque estaba fundada sobre la peña.</span>
+26	<span class="word">Y cualquiera que me oye estas palabras, y no las hace, le compararé á un hombre insensato, que edificó su casa sobre la arena;</span>
+27	<span class="word">Y descendió lluvia, y vinieron ríos, y soplaron vientos, é hicieron ímpetu en aquella casa; y cayó, y fué grande su ruina.</span>
+28	Y fué que, como Jesús acabó estas palabras, las gentes se admiraban de su doctrina;
+29	Porque les enseñaba como quien tiene autoridad, y no como los escribas.

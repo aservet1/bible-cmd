@@ -1,0 +1,30 @@
+1	Y FUÉ, que acabando Jesús de dar mandamientos á sus doce discípulos, se fué de allí á enseñar y á predicar en las ciudades de ellos.
+2	Y oyendo Juan en la prisión los hechos de Cristo, le envió dos de sus discípulos,
+3	Diciendo: ¿Eres tú aquél que había de venir, ó esperaremos á otro?
+4	Y respondiendo Jesús, les dijo: <span class="word">Id, y haced saber á Juan las cosas que oís y veis:</span>
+5	<span class="word">Los ciegos ven, y los cojos andan; los leprosos son limpiados, y los sordos oyen; los muertos son resucitados, y á los pobres es anunciado el evangelio.</span>
+6	<span class="word">Y bienaventurado es el que no fuere escandalizado en mí.</span>
+7	E idos ellos, comenzó Jesús á decir de Juan á las gentes: <span class="word">¿Qué salisteis á ver al desierto? ¿una caña que es meneada del viento?</span>
+8	<span class="word">Mas ¿qué salisteis á ver? ¿un hombre cubierto de delicados vestidos? He aquí, los que traen vestidos delicados, en las casas de los reyes están.</span>
+9	<span class="word">Mas ¿qué salisteis á ver? ¿un profeta? También os digo, y más que profeta.</span>
+10	<span class="word">Porque éste es de quien está escrito: He aquí, yo envío mi mensajero delante de tu faz, Que aparejará tu camino delante de ti.</span>
+11	<span class="word">De cierto os digo, que no se levantó entre los que nacen de mujeres otro mayor que Juan el Bautista; mas el que es muy más pequeño en el reino de los cielos, mayor es que él.</span>
+12	<span class="word">Desde los días de Juan el Bautista hasta ahora, al reino de los cielos se hace fuerza, y los valientes lo arrebatan.</span>
+13	<span class="word">Porque todos los profetas y la ley hasta Juan profetizaron.</span>
+14	<span class="word">Y si queréis recibir, él es aquel Elías que había de venir.</span>
+15	<span class="word">El que tiene oídos para oir, oiga.</span>
+16	<span class="word">Mas ¿á quién compararé esta generación? Es semejante á los muchachos que se sientan en las plazas, y dan voces á sus compañeros,</span>
+17	<span class="word">Y dicen: Os tañimos flauta, y no bailasteis; os endechamos, y no lamentasteis.</span>
+18	<span class="word">Porque vino Juan, que ni comía ni bebía, y dicen: Demonio tiene.</span>
+19	<span class="word">Vino el Hijo del hombre, que come y bebe, y dicen: He aquí un hombre comilón, y bebedor de vino, amigo de publicanos y de pecadores. Mas la sabiduría es justificada por sus hijos.</span>
+20	Entonces comenzó á reconvenir á las ciudades en las cuales habían sido hechas muy muchas de sus maravillas, porque no se habían arrepentido, diciendo:
+21	<span class="word">Ay de ti, Corazín! ­Ay de ti, Bethsaida! porque si en Tiro y en Sidón fueran hechas las maravillas que han sido hechas en vosotras, en otro tiempo se hubieran arrepentido en saco y en ceniza.</span>
+22	<span class="word">Por tanto os digo, que á Tiro y á Sidón será más tolerable el castigo en el día del juicio, que á vosotras.</span>
+23	<span class="word">Y tú, Capernaum, que eres levantada hasta el cielo, hasta los infiernos serás abajada; porque si en los de Sodoma fueran hechas las maravillas que han sido hechas en ti, hubieran quedado hasta el día de hoy.</span>
+24	<span class="word">Por tanto os digo, que á la tierra de los de Sodoma será más tolerable el castigo en el día del juicio, que á ti.</span>
+25	En aquel tiempo, respondiendo Jesús, dijo: <span class="word">Te alabo, Padre, Señor del cielo y de la tierra, que hayas escondido estas cosas de los sabios y de los entendidos, y las hayas revelado á los niños.</span>
+26	<span class="word">Así, Padre, pues que así agradó en tus ojos.</span>
+27	<span class="word">Todas las cosas me son entregadas de mi Padre: y nadie conoció al Hijo, sino el Padre; ni al Padre conoció alguno, sino el Hijo, y aquel á quien el Hijo lo quisiere revelar.</span>
+28	<span class="word">Venid á mí todos los que estáis trabajados y cargados, que yo os haré descansar.</span>
+29	<span class="word">Llevad mi yugo sobre vosotros, y aprended de mí, que soy manso y humilde de corazón; y hallaréis descanso para vuestras almas.</span>
+30	<span class="word">Porque mi yugo es fácil, y ligera mi carga.</span>

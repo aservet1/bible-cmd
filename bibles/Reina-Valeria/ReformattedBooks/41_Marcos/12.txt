@@ -1,0 +1,44 @@
+1	Y COMENZO á hablarles por parábolas: <span class="word">Plantó un hombre una viña, y la cercó con seto, y cavó un lagar, y edificó una torre, y la arrendó á labradores, y se partió lejos.</span>
+2	<span class="word">Y envió un siervo á los labradores, al tiempo, para que tomase de los labradores del fruto de la viña.</span>
+3	<span class="word">Mas ellos, tomándole, le hirieron, y le enviaron vacío.</span>
+4	<span class="word">Y volvió á enviarles otro siervo; mas apedreándole, le hirieron en la cabeza, y volvieron á enviarle afrentado.</span>
+5	<span class="word">Y volvió á enviar otro, y á aquél mataron; y á otros muchos, hiriendo á unos y matando á otros.</span>
+6	<span class="word">Teniendo pues aún un hijo suyo amado, enviólo también á ellos el postrero, diciendo: Tendrán en reverencia á mi hijo.</span>
+7	<span class="word">Mas aquellos labradores dijeron entre sí: Este es el heredero; venid, matémosle, y la heredad será nuestra.</span>
+8	<span class="word">Y prendiéndole, le mataron, y echaron fuera de la viña.</span>
+9	<span class="word">¿Qué, pues, hará el señor de la viña? Vendrá, y destruirá á estos labradores, y dará su viña á otros.</span>
+10	<span class="word">¿Ni aun esta Escritura habéis leído: La piedra que desecharon los que edificaban, Esta es puesta por cabeza de esquina;</span>
+11	<span class="word">Por el Señor es hecho esto, Y es cosa maravillosa en nuestros ojos?</span>
+12	Y procuraban prenderle, porque entendían que decía á ellos aquella parábola; mas temían á la multitud; y dejándole, se fueron.
+13	Y envían á él algunos de los Fariseos y de los Herodianos, para que le sorprendiesen en alguna palabra.
+14	Y viniendo ellos, le dicen: Maestro, sabemos que eres hombre de verdad, y que no te cuidas de nadie; porque no miras á la apariencia de hombres, antes con verdad enseñas el camino de Dios: ¿Es lícito dar tributo á César, ó no? ¿Daremos, ó no daremos?
+15	Entonces él, como entendía la hipocresía de ellos, les dijo: <span class="word">¿Por qué me tentáis? Traedme la moneda para que la vea.</span>
+16	Y ellos se la trajeron y les dice: <span class="word">¿Cúya es esta imagen y esta inscripción?</span>Y ellos le dijeron: De César.
+17	Y respondiendo Jesús, les dijo:<span class="word">Dad lo que es de César á César; y lo que es de Dios, á Dios.</span>Y se maravillaron de ello.
+18	Entonces vienen á el los Saduceos, que dicen que no hay resurrección, y le preguntaron, diciendo:
+19	Maestro, Moisés nos escribió, que si el hermano de alguno muriese, y dejase mujer, y no dejase hijos, que su hermano tome su mujer, y levante linaje á su hermano.
+20	Fueron siete hermanos: y el primero tomó mujer, y muriendo, no dejó simiente;
+21	Y la tomó el segundo, y murió, y ni aquél tampoco dejó simiente; y el tercero, de la misma manera.
+22	Y la tomaron los siete, y tampoco dejaron simiente: á la postre murió también la mujer.
+23	En la resurrección, pues, cuando resucitaren, ¿de cuál de ellos será mujer? porque los siete la tuvieron por mujer.
+24	Entonces respondiendo Jesús, les dice: <span class="word">¿No erráis por eso, porque no sabéis las Escrituras, ni la potencia de Dios?</span>
+25	<span class="word">Porque cuando resucitarán de los muertos, ni se casarán, ni serán dados en casamiento, mas son como los ángeles que están en los cielos.</span>
+26	<span class="word">Y de que los muertos hayan de resucitar, ¿no habéis leído en el libro de Moisés cómo le habló Dios en la zarza, diciendo: Yo soy el Dios de Abraham, y el Dios de Isaac, y el Dios de Jacob?</span>
+27	<span class="word">No es Dios de muertos, mas Dios de vivos; así que vosotros mucho erráis.</span>
+28	Y llegándose uno de los escribas, que los había oído disputar, y sabía que les había respondido bien, le preguntó: ¿Cuál es el primer mandamiento de todos?
+29	Y Jesús le respondió: <span class="word">El primer mandamiento de todos es: Oye, Israel, el Señor nuestro Dios, el Señor uno es.</span>
+30	<span class="word">Amarás pues al Señor tu Dios de todo tu corazón, y de toda tu alma, y de toda tu mente, y de todas tus fuerzas; este es el principal mandamiento.</span>
+31	<span class="word">Y el segundo es semejante á él: Amarás á tu prójimo como á ti mismo. No hay otro mandamiento mayor que éstos.</span>
+32	Entonces el escriba le dijo: Bien, Maestro, verdad has dicho, que uno es Dios, y no hay otro fuera de él;
+33	Y que amarle de todo corazón, y de todo entendimiento, y de toda el alma, y de todas las fuerzas, y amar al prójimo como á sí mismo, más es que todos los holocaustos y sacrificios.
+34	Jesús entonces, viendo que había respondido sabiamente, le dice: <span class="word">No estás lejos del reino de Dios.</span>Y ya ninguno osaba preguntarle.
+35	Y respondiendo Jesús decía, enseñando en el templo: <span class="word">¿Cómo dicen los escribas que el Cristo es hijo de David?</span>
+36	<span class="word">Porque el mismo David dijo por el Espíritu Santo: Dijo el Señor á mi Señor: Siéntate á mi diestra, Hasta que ponga tus enemigos por estrado de tus pies.</span>
+37	<span class="word">Luego llamándole el mismo David Señor, ¿de dónde, pues, es su hijo? Y los que eran del común del pueblo le oían de buena gana.</span>
+38	Y les decía en su doctrina: <span class="word">Guardaos de los escribas, que quieren andar con ropas largas, y aman las salutaciones en las plazas,</span>
+39	<span class="word">Y las primeras sillas en las sinagogas, y los primeros asientos en las cenas;</span>
+40	<span class="word">Que devoran las casas de las viudas, y por pretexto hacen largas oraciones. Estos recibirán mayor juicio.</span>
+41	Y estando sentado Jesús delante del arca de la ofrenda, miraba cómo el pueblo echaba dinero en el arca: y muchos ricos echaban mucho.
+42	Y como vino una viuda pobre, echó dos blancas, que son un maravedí.
+43	Entonces llamando á sus discípulos, les dice:<span class="word">De cierto os digo que esta viuda pobre echó más que todos los que han echado en el arca:</span>
+44	<span class="word">Porque todos han echado de lo que les sobra; mas ésta, de su pobreza echó todo lo que tenía, todo su alimento.</span>

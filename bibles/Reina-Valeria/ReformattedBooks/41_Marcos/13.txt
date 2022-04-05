@@ -1,0 +1,37 @@
+1	Y SALIENDO del templo, le dice uno de sus discípulos: Maestro, mira qué piedras, y qué edificios.
+2	Y Jesús respondiendo, le dijo: <span class="word">¿Ves estos grandes edificios? no quedará piedra sobre piedra que no sea derribada.</span>
+3	Y sentándose en el monte de las Olivas delante del templo, le preguntaron aparte Pedro y Jacobo y Juan y Andrés:
+4	Dinos, ¿cuándo serán estas cosas? ¿y qué señal habrá cuando todas estas cosas han de cumplirse?
+5	Y Jesús respondiéndoles, comenzó á decir: <span class="word">Mirad, que nadie os engañe;</span>
+6	<span class="word">Porque vendrán muchos en mi nombre, diciendo: Yo soy el Cristo; y engañaran á muchos.</span>
+7	<span class="word">Mas cuando oyereis de guerras y de rumores de guerras no os turbéis, porque conviene hacerse así; mas aun no será el fin.</span>
+8	<span class="word">Porque se levantará nación contra nación, y reino contra reino; y habrá terremotos en muchos lugares, y habrá hambres y alborotos; principios de dolores serán estos.</span>
+9	<span class="word">Mas vosotros mirad por vosotros: porque os entregarán en los concilios, y en sinagogas seréis azotados: y delante de presidentes y de reyes seréis llamados por causa de mí, en testimonio á ellos.</span>
+10	<span class="word">Y á todas las gentes conviene que el evangelio sea predicado antes.</span>
+11	<span class="word">Y cuando os trajeren para entregaros, no premeditéis qué habéis de decir, ni lo penséis: mas lo que os fuere dado en aquella hora, eso hablad; porque no sois vosotros los que habláis, sino el Espíritu Santo.</span>
+12	<span class="word">Y entregará á la muerte el hermano al hermano, y el padre al hijo: y se levantarán los hijos contra los padres, y los matarán.</span>
+13	<span class="word">Y seréis aborrecidos de todos por mi nombre: mas el que perseverare hasta el fin, éste será salvo.</span>
+14	<span class="word">Empero cuando viereis la abominación de asolamiento, que fué dicha por el profeta Daniel, que estará donde no debe </span>(el que lee, entienda), <span class="word">entonces los que estén en Judea huyan á los montes;</span>
+15	<span class="word">Y el que esté sobre el terrado, no descienda á la casa, ni entre para tomar algo de su casa;</span>
+16	<span class="word">Y el que estuviere en el campo, no vuelva atrás á tomar su capa.</span>
+17	<span class="word">Mas ­ay de las preñadas, y de las que criaren en aquellos días!</span>
+18	<span class="word">Orad pues, que no acontezca vuestra huída en invierno.</span>
+19	<span class="word">Porque aquellos días serán de aflicción, cual nunca fué desde el principio de la creación que crió Dios, hasta este tiempo, ni será.</span>
+20	<span class="word">Y si el Señor no hubiese abreviado aquellos días, ninguna carne se salvaría; mas por causa de los escogidos que él escogió, abrevió aquellos días.</span>
+21	<span class="word">Y entonces si alguno os dijere: He aquí, aquí está el Cristo; ó, He aquí, allí está, no le creáis.</span>
+22	<span class="word">Porque se levantarán falsos Cristos y falsos profetas, y darán señales y prodigios, para engañar, si se pudiese hacer, aun á los escogidos.</span>
+23	<span class="word">Mas vosotros mirad; os lo he dicho antes todo.</span>
+24	<span class="word">Empero en aquellos días, después de aquella aflicción, el sol se obscurecerá, y la luna no dará su resplandor;</span>
+25	<span class="word">Y las estrellas caerán del cielo, y las virtudes que están en los cielos serán conmovidas;</span>
+26	<span class="word">Y entonces verán al Hijo del hombre, que vendrá en las nubes con mucha potestad y gloria.</span>
+27	<span class="word">Y entonces enviará sus ángeles, y juntará sus escogidos de los cuatro vientos, desde el cabo de la tierra hasta el cabo del cielo.</span>
+28	<span class="word">De la higuera aprended la semejanza: Cuando su rama ya se enternece, y brota hojas, conocéis que el verano está cerca:</span>
+29	<span class="word">Así también vosotros, cuando viereis hacerse estas cosas, conoced que está cerca, á las puertas.</span>
+30	<span class="word">De cierto os digo que no pasará esta generación, que todas estas cosas no sean hechas.</span>
+31	<span class="word">El cielo y la tierra pasarán, mas mis palabras no pasarán.</span>
+32	<span class="word">Empero de aquel día y de la hora, nadie sabe; ni aun los ángeles que están en el cielo, ni el Hijo, sino el Padre.</span>
+33	<span class="word">Mirad, velad y orad: porque no sabéis cuándo será el tiempo.</span>
+34	<span class="word">Como el hombre que partiéndose lejos, dejó su casa, y dió facultad á sus siervos, y á cada uno su obra, y al portero mandó que velase:</span>
+35	<span class="word">Velad pues, porque no sabéis cuándo el señor de la casa vendrá; si á la tarde, ó á la media noche, ó al canto del gallo, ó á la mañana;</span>
+36	<span class="word">Porque cuando viniere de repente, no os halle durmiendo.</span>
+37	<span class="word">Y las cosas que á vosotros digo, á todos las dijo: Velad.</span>

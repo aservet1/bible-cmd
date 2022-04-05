@@ -1,0 +1,35 @@
+1	EN aquel tiempo se llegaron los discípulos á Jesús, diciendo: ¿Quién es el mayor en el reino de los cielos?
+2	Y llamando Jesús á un niño, le puso en medio de ellos,
+3	Y dijo: <span class="word">De cierto os digo, que si no os volviereis, y fuereis como niños, no entraréis en el reino de los cielos.</span>
+4	<span class="word">Así que, cualquiera que se humillare como este niño, éste es el mayor en el reino de los cielos.</span>
+5	<span class="word">Y cualquiera que recibiere á un tal niño en mi nombre, á mí recibe.</span>
+6	<span class="word">Y cualquiera que escandalizare á alguno de estos pequeños que creen en mí, mejor le fuera que se le colgase al cuello una piedra de molino de asno, y que se le anegase en el profundo de la mar.</span>
+7	<span class="word">Ay del mundo por los escándalos! porque necesario es que vengan escándalos; mas ­ay de aquel hombre por el cual viene el escándalo!</span>
+8	<span class="word">Por tanto, si tu mano ó tu pie te fuere ocasión de caer, córtalo y echaló de ti: mejor te es entrar cojo ó manco en la vida, que teniendo dos manos ó dos pies ser echado en el fuego eterno.</span>
+9	<span class="word">Y si tu ojo te fuere ocasión de caer, sácalo y échalo de ti: mejor te es entrar con un solo ojo en la vida, que teniendo dos ojos ser echado en el infierno del fuego.</span>
+10	<span class="word">Mirad no tengáis en poco á alguno de estos pequeños; porque os digo que sus ángeles en los cielos ven siempre la faz de mi Padre que está en los cielos.</span>
+11	<span class="word">Porque el Hijo del hombre ha venido para salvar lo que se había perdido.</span>
+12	<span class="word">¿Qué os parece? Si tuviese algún hombre cien ovejas, y se descarriase una de ellas, ¿no iría por los montes, dejadas las noventa y nueve, á buscar la que se había descarriado?</span>
+13	<span class="word">Y si aconteciese hallarla, de cierto os digo, que más se goza de aquélla, que de las noventa y nueve que no se descarriaron.</span>
+14	<span class="word">Así, no es la voluntad de vuestro Padre que está en los cielos, que se pierda uno de estos pequeños.</span>
+15	<span class="word">Por tanto, si tu hermano pecare contra ti, ve, y redargúyele entre ti y él solo: si te oyere, has ganado á tu hermano.</span>
+16	<span class="word">Mas si no te oyere, toma aún contigo uno ó dos, para que en boca de dos ó de tres testigos conste toda palabra.</span>
+17	<span class="word">Y si no oyere á ellos, dilo á la iglesia: y si no oyere á la iglesia, tenle por étnico y publicano.</span>
+18	<span class="word">De cierto os digo que todo lo que ligareis en la tierra, será ligado en el cielo; y todo lo que desatareis en la tierra, será desatado en el cielo.</span>
+19	<span class="word">Otra vez os digo, que si dos de vosotros se convinieren en la tierra, de toda cosa que pidieren, les será hecho por mi Padre que está en los cielos.</span>
+20	<span class="word">Porque donde están dos ó tres congregados en mi nombre, allí estoy en medio de ellos.</span>
+21	Entonces Pedro, llegándose á él, dijo: Señor, ¿cuántas veces perdonaré á mi hermano que pecare contra mí? ¿hasta siete?
+22	Jesús le dice: <span class="word">No te digo hasta siete, mas aun hasta setenta veces siete.</span>
+23	<span class="word">Por lo cual, el reino de los cielos es semejante á un hombre rey, que quiso hacer cuentas con sus siervos.</span>
+24	<span class="word">Y comenzando á hacer cuentas, le fué presentado uno que le debía diez mil talentos.</span>
+25	<span class="word">Mas á éste, no pudiendo pagar, mandó su señor venderle, y á su mujer é hijos, con todo lo que tenía, y que se le pagase.</span>
+26	<span class="word">Entonces aquel siervo, postrado, le adoraba, diciendo: Señor, ten paciencia conmigo, y yo te lo pagaré todo.</span>
+27	<span class="word">El señor, movido á misericordia de aquel siervo, le soltó y le perdonó la deuda.</span>
+28	<span class="word">Y saliendo aquel siervo, halló á uno de sus consiervos, que le debía cien denarios; y trabando de él, le ahogaba, diciendo: Págame lo que debes.</span>
+29	<span class="word">Entonces su consiervo, postrándose á sus pies, le rogaba, diciendo: Ten paciencia conmigo, y yo te lo pagaré todo.</span>
+30	<span class="word">Mas él no quiso; sino fué, y le echó en la cárcel hasta que pagase la deuda.</span>
+31	<span class="word">Y viendo sus consiervos lo que pasaba, se entristecieron mucho, y viniendo, declararon á su señor todo lo que había pasado.</span>
+32	<span class="word">Entonces llamándole su señor, le dice: Siervo malvado, toda aquella deuda te perdoné, porque me rogaste:</span>
+33	<span class="word">¿No te convenía también á ti tener misericordia de tu consiervo, como también yo tuve misericordia de ti?</span>
+34	<span class="word">Entonces su señor, enojado, le entregó á los verdugos, hasta que pagase todo lo que le debía.</span>
+35	<span class="word">Así también hará con vosotros mi Padre celestial, si no perdonareis de vuestros corazones cada uno á su hermano sus ofensas.</span>

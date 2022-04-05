@@ -1,0 +1,46 @@
+1	Y RESPONDIENDO Jesús, les volvió á hablar en parábolas, diciendo:
+2	<span class="word">El reino de los cielos es semejante á un hombre rey, que hizo bodas á su hijo;</span>
+3	<span class="word">Y envió sus siervos para que llamasen los llamados á las bodas; mas no quisieron venir.</span>
+4	<span class="word">Volvió á enviar otros siervos, diciendo: Decid á los llamados: He aquí, mi comida he aparejado; mis toros y animales engordados son muertos, y todo está prevenido: venid á las bodas.</span>
+5	<span class="word">Mas ellos no se cuidaron, y se fueron, uno á su labranza, y otro á sus negocios;</span>
+6	<span class="word">Y otros, tomando á sus siervos, los afrentaron y los mataron.</span>
+7	<span class="word">Y el rey, oyendo esto, se enojó; y enviando sus ejércitos, destruyó á aquellos homicidas, y puso fuego á su ciudad.</span>
+8	<span class="word">Entonces dice á sus siervos: Las bodas á la verdad están aparejadas; mas los que eran llamados no eran dignos.</span>
+9	<span class="word">Id pues á las salidas de los caminos, y llamad á las bodas á cuantos hallareis.</span>
+10	<span class="word">Y saliendo los siervos por los caminos, juntaron á todos los que hallaron, juntamente malos y buenos: y las bodas fueron llenas de convidados.</span>
+11	<span class="word">Y entró el rey para ver los convidados, y vió allí un hombre no vestido de boda.</span>
+12	<span class="word">Y le dijo: Amigo, ¿cómo entraste aquí no teniendo vestido de boda? Mas él cerró la boca.</span>
+13	<span class="word">Entonces el rey dijo á los que servían: Atado de pies y de manos tomadle, y echadle en las tinieblas de afuera: allí será el lloro y el crujir de dientes.</span>
+14	<span class="word">Porque muchos son llamados, y pocos escogidos.</span>
+15	Entonces, idos los Fariseos, consultaron cómo le tomarían en alguna palabra.
+16	Y envían á él los discípulos de ellos, con los Herodianos, diciendo: Maestro, sabemos que eres amador de la verdad, y que enseñas con verdad el camino de Dios, y que no te curas de nadie, porque no tienes acepción de persona de hombres.
+17	Dinos pues, ¿qué te parece? ¿es lícito dar tributo á César, ó no?
+18	Mas Jesús, entendida la malicia de ellos, les dice: <span class="word">¿Por qué me tentáis, hipócritas?</span>
+19	<span class="word">Mostradme la moneda del tributo.</span>Y ellos le presentaron un denario.
+20	Entonces les dice: <span class="word">¿Cúya es esta figura, y lo que está encima escrito?</span>
+21	Dícenle: De César. Y díceles: <span class="word">Pagad pues á César lo que es de César, y á Dios lo que es de Dios.</span>
+22	Y oyendo esto, se maravillaron, y dejándole se fueron.
+23	Aquel día llegaron á él los Saduceos, que dicen no haber resurrección, y le preguntaron,
+24	Diciendo: Maestro, Moisés dijo: Si alguno muriere sin hijos, su hermano se casará con su mujer, y despertará simiente á su hermano.
+25	Fueron pues, entre nosotros siete hermanos: y el primero tomó mujer, y murió; y no teniendo generación, dejó su mujer á su hermano.
+26	De la misma manera también el segundo, y el tercero, hasta los siete.
+27	Y después de todos murió también la mujer.
+28	En la resurrección pues, ¿de cuál de los siete será ella mujer? porque todos la tuvieron.
+29	Entonces respondiendo Jesús, les dijo: <span class="word">Erráis ignorando las Escrituras, y el poder de Dios.</span>
+30	<span class="word">Porque en la resurrección, ni los hombres tomarán mujeres, ni las mujeres marido; mas son como los ángeles de Dios en el cielo.</span>
+31	<span class="word">Y de la resurrección de los muertos, ¿no habéis leído lo que os es dicho por Dios, que dice:</span>
+32	<span class="word">Yo soy el Dios de Abraham, y el Dios de Isaac, y el Dios de Jacob? Dios no es Dios de muertos, sino de vivos.</span>
+33	Y oyendo esto las gentes, estaban atónitas de su doctrina.
+34	Entonces los Fariseos, oyendo que había cerrado la boca á los Saduceos, se juntaron á una.
+35	Y preguntó uno de ellos, intérprete de la ley, tentándole y diciendo:
+36	Maestro, ¿cuál es el mandamiento grande en la ley?
+37	Y Jesús le dijo: <span class="word">Amarás al Señor tu Dios de todo tu corazón, y de toda tu alma, y de toda tu mente.</span>
+38	<span class="word">Este es el primero y el grande mandamiento.</span>
+39	<span class="word">Y el segundo es semejante á éste: Amarás á tu prójimo como á ti mismo.</span>
+40	<span class="word">De estos dos mandamientos depende toda la ley y los profetas.</span>
+41	Y estando juntos los Fariseos, Jesús les preguntó,
+42	Diciendo: <span class="word">¿Qué os parece del Cristo? ¿de quién es Hijo?</span>Dícenle: De David.
+43	El les dice: <span class="word">¿Pues cómo David en Espíritu le llama Señor, diciendo:</span>
+44	<span class="word">Dijo el Señor á mi Señor: Siéntate á mi diestra, Entre tanto que pongo tus enemigos por estrado de tus pies?</span>
+45	<span class="word">Pues si David le llama Señor, ¿cómo es su Hijo?</span>
+46	Y nadie le podía responder palabra; ni osó alguno desde aquel día preguntarle más.
