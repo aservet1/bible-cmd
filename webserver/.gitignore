@@ -7,3 +7,6 @@
 # mymisc
 *.swp
 .eslintcache
+
+# server log files
+server-logs
