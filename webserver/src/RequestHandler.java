@@ -83,7 +83,7 @@ class RequestHandler {
 					String cmdResult = runShellCmd("./bookcmds/" + cmds[i]).strip();
 					if (cmdResult.length() > 0) results.add(cmdResult);
 				}
-				resp.body = (String.join("\n",results) + "\n").getBytes();
+				resp.body = String.join("\n",results).getBytes();
 				mimeType = "text/plain";
 				success = true;
 				break;
