@@ -1,4 +1,3 @@
-
 package bibleServer;
 
 import java.io.UnsupportedEncodingException;
@@ -20,6 +19,8 @@ import java.io.IOException;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+
+import java.util.ArrayList;
 
 class Response {
 	String header;
@@ -44,7 +45,6 @@ class RequestHandler {
         	}
 		return contents == null ? Pages.NOT_FOUND.getBytes() : contents;
 	}
-
 
 	public static Response handle(String fileRequested) {
 
@@ -78,11 +78,12 @@ class RequestHandler {
 				String[] cmds = (
 					queryMap.get("cmd").replace("_"," ")
 				).split(";");
-				String[] results = new String[cmds.length];
+				ArrayList<String> results = new ArrayList<String>();
 				for(int i = 0; i < cmds.length; ++i) {
-					results[i] = runShellCmd("./bookcmds/" + cmds[i]);
+					String cmdResult = runShellCmd("./bookcmds/" + cmds[i]).strip();
+					if (cmdResult.length() > 0) results.add(cmdResult);
 				}
-				resp.body = String.join("\n",results).getBytes();
+				resp.body = (String.join("\n",results) + "\n").getBytes();
 				mimeType = "text/plain";
 				success = true;
 				break;
