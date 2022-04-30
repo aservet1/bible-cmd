@@ -26,6 +26,38 @@ function parseBookText(bookText) {
         }, {}
     )
 }
+function parseBookText_KeepOrderAndUniqueness(bookTextSelection) {
+    const parsedBookTextSelection = []
+    let currentBook = null;
+    let parsedSelectionForCurrentBook = {}
+    for(const lineText of bookText.split('\n')) {
+
+        // todo: validate line format with regex
+ 
+        const lineParts   = lineText.split('\t')
+        const chverse = lineParts[1].split(':')
+
+        const line = {
+            book :  lineParts[0],
+            chapter :   chverse[0],
+            verseNumber :   chverse[1],
+            verseText : lineParts[2]
+        }
+        
+        if (line.book !== currentBook) {
+            parsedBookTextSelection.append({
+                book: currentBook,
+                verses: currentBookVerses
+            }) 
+            currentBook = line.book
+        } else {
+            verses.append({
+                verseNumber: line.verseNumber,
+                verseText = line.verseText
+            })
+        }
+    }
+}
 function postProcessBibleTextToHTMLTable__NOTREADYTOUSEYET(text) {
     // this function is not done, I've only copied the code from postProcessBibleTextToHTMLList and started to make a few small changes
     let str = '';
