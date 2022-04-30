@@ -146,5 +146,6 @@ document.getElementById('asktext').onkeypress = (
 			showText('waiting for content...')
 			getBookText(document.getElementById('asktext').value)
 		}
+		// TODO: if you hit 'esc' key, unfocus from the text box
 	}
 )
