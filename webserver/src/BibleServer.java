@@ -12,24 +12,57 @@ import java.net.Socket;
 import java.util.Date;
 import java.util.StringTokenizer;
 
-// Original code copied and modified from SSaurel's Blog:
-// https://www.ssaurel.com/blog/create-a-simple-http-web-server-in-java
-// Each Client Connection will be managed in a dedicated Thread
-public class BibleServer implements Runnable {
+/**  Source: https://www.ssaurel.com/blog/create-a-simple-http-web-server-in-java
+ *   Original code copied and modified from SSaurel's Blog
+ */
+
+public class BibleServer implements Runnable { // Each Client Connection will be managed in a dedicated Thread
 
 	public static final String WEB_ROOT = "./public/";
 
 	public static void main(String[] args) {
+        if ( args.length == 0 ) {
+            PORT = DEFAULT_PORT;
+        } else {
+            for (int i = 0; i < args.length; ++i) {
+                switch(args[i]) {
+                    case "-p": case "--port":
+                        if (i == args.length-1) {
+                            usage();
+                        }
+                        try {
+                            PORT = Integer.parseInt(args[++i]);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            System.exit(2);
+                        }
+                        
+                        break;
+                    default:
+                        usage();
+                }
+            }
+        }
+
+
 		// have some code in here that ensures that all necessary files are in the right place
 		startServer();
 	}
-	static final int PORT = 8080; // port to listen connection
+    static int DEFAULT_PORT = 8080;
+	static int PORT; // port to listen connection
 	static final boolean verbose = true; // verbose mode
 	private Socket connect; // Client Connection via Socket Class
 
 	public BibleServer(Socket c) {
 		connect = c;
 	}
+
+    private static void usage() {
+        System.out.println (
+            "usage: java BibleServer [ -p|--port PORT_NUMBER (default 8080) ]"
+        );
+        System.exit(2);
+    }
 
 	private static void startServer() {
 		try {
