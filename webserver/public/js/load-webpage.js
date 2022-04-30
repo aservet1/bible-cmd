@@ -89,14 +89,12 @@ function postProcessBibleTextToHTMLList(text) {
         str += '<li><b>' + book + '</b>'
         str += '<ul>'
         for (const [chapter,verses] of Object.entries(chapters)) {
-            str += '<li><b>Chapter ' + chapter + ':</b>'
-            str += '<ul>'
+            str += `<li><b>Chapter ${chapter}:</b>`
+            str += '<ol style="font-weight: bolder">'
             for (const [verse,verseText] of Object.entries(verses)) {
-                str += '<li>'
-                str += '<b>'+verse+'.</b> ' + verseText
-                str += '</li>'
+                str += `<li value=${verse}> <span style="font-weight: normal"> ${verseText} </span> </li>`
             }
-            str += '</ul>'
+            str += '</ol>'
             str += '</li>'
         }
         str += '</ul>'
