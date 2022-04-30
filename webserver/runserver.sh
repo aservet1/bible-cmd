@@ -8,5 +8,5 @@ pkgname=bibleServer
 rm -rfv $pkgname
 javac src/* -d .
 mkdir -p "./server-logs"
-java $pkgname.BibleServer -p 8880 \
+java $pkgname.BibleServer -p 8080 \
     | tee "./server-logs/server_log_started_on_$( date | tr ' ' '-' ).log"
