@@ -74,20 +74,20 @@ class RequestHandler {
                 break;
 
             case "/api/wordcount":
-                boolean filterStopWords = false;
+                boolean filterStopwords = false;
                 // System.out.print("queryMap: "); System.out.println(queryMap);
                 if (queryMap.containsKey("filter_stopwords")) {
-                    filterStopWords = queryMap.get("filter_stopwords").strip().equalsIgnoreCase("true");
+                    filterStopwords = queryMap.get("filter_stopwords").strip().equalsIgnoreCase("true");
                 }
                 String bookPath = "./bookcmds/" + queryMap.get("book");
                 String[] passages = queryMap.get("passages").replace("_"," ").split(";");
 
                 ArrayList<String> cmd = new ArrayList<String>();
                 cmd.add("python3"); cmd.add("./aux-scripts/wordcount.py");
-                cmd.add("-p"); cmd.add(bookPath);
-                if (filterStopWords) { //TODO: make the stop word list specifiable instead of plain boolean
+                cmd.add("--path-to-book-binary"); cmd.add(bookPath);
+                if (filterStopwords) { //TODO: make the stop word list specifiable instead of plain boolean
                     String stopWordList = "./stopwords/middle-english.txt";
-                    cmd.add("-f"); cmd.add(stopWordList);
+                    cmd.add("--filter-stopwords"); cmd.add(stopWordList);
                 }
                 for(String passage : passages) {
                     cmd.add(passage);

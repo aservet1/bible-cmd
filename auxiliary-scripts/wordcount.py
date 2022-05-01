@@ -9,7 +9,7 @@ def shell_exec_get_stdout_as_string(cmd):
     process = subprocess.Popen(
         cmd,
         shell=True,
-        stdout=subprocess.PIPE, 
+        stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
     )
     result = ''
@@ -23,7 +23,7 @@ def shell_exec_get_stdout_as_string(cmd):
 
 def usage_string():
     return (
-        "usage: python3 wordcount.py -p|--path-to-book-binary PATH [ -f|--filter-stop-words stopwords.txt ] [BOOK_SELECTIONS...]\n" +
+        "usage: python3 wordcount.py -p|--path-to-book-binary PATH [ -f|--filter-stopwords stopwords.txt ] [BOOK_SELECTIONS...]\n" +
         "\tBOOK_SELECTIONS is a list of standard book selections, i.e. 'mark 1:1-15' or 'luke' or 'Obadiah 1:2,4,6,8'\n" +
         "\tPATH is the path to your book binary, i.e. './bookcmds/kjv' or '/home/username/biblecmds/non-english-versions/vulgate'\n" +
         "\t\tIf you already have the binary in your system path and you use it as a global command, you can do that as well, i.e. 'kjv'"
@@ -33,16 +33,16 @@ def usage_abort():
     exit(2)
 
 args = sys.argv
-path_to_book_binary = None # "./bin/kjv" # TODO: parameterize this (requires arg parsing where you pick out flagged values while maintaining not flagged values)
-stop_words = None
+stopwords = None
+path_to_book_binary = None
 i = 1 # skip the first arg
 while i < (len(args)):
-    if   args[i] == "-f" or args[i] == "--filter-stop-words":
+    if args[i] == "-f" or args[i] == "--filter-stopwords":
         args[i] = None
         i += 1
         if not i < len(args):
             usage_abort()
-        stop_words = args[i]
+        stopwords = args[i]
         args[i] = None
     elif args[i] == "-p" or args[i] == "--path-to-book-binary":
         args[i] = None
@@ -53,7 +53,7 @@ while i < (len(args)):
         args[i] = None
 
     i += 1
-        
+
 if not path_to_book_binary:
     usage_abort()
 
@@ -64,11 +64,11 @@ if len(args) == 1:
 else:
     book_selections = args[1:]
 
-if stop_words:
-    with open(stop_words) as fp:
-        stop_words = { word for word in re.split("\s+",fp.read()) if len(word) }
+if stopwords:
+    with open(stopwords) as fp:
+        stopwords = { word for word in re.split("\s+",fp.read()) if len(word) }
 else:
-    stop_words = {}
+    stopwords = {}
 
 words_to_keep_capitalized = [
     "LORD"
@@ -95,7 +95,7 @@ for book_selection in book_selections:
             words.append(word)
     wordcount = {}
     for word in words:
-        if word in stop_words:
+        if word in stopwords:
             continue
         if word in wordcount.keys():
             wordcount[word] += 1
