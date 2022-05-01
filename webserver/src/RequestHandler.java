@@ -75,26 +75,28 @@ class RequestHandler {
 
             case "/api/wordcount":
                 boolean filterStopwords = false;
-                // System.out.print("queryMap: "); System.out.println(queryMap);
                 if (queryMap.containsKey("filter_stopwords")) {
-                    filterStopwords = queryMap.get("filter_stopwords").strip().equalsIgnoreCase("true");
+                    filterStopwords = queryMap.get("filter_stopwords").equalsIgnoreCase("true");
                 }
                 String bookPath = "./bookcmds/" + queryMap.get("book");
                 String[] passages = queryMap.get("passages").replace("_"," ").split(";");
 
                 ArrayList<String> cmd = new ArrayList<String>();
-                cmd.add("python3"); cmd.add("./aux-scripts/wordcount.py");
-                cmd.add("--path-to-book-binary"); cmd.add(bookPath);
-                if (filterStopwords) { //TODO: make the stop word list specifiable instead of plain boolean
-                    String stopWordList = "./stopwords/middle-english.txt";
-                    cmd.add("--filter-stopwords"); cmd.add(stopWordList);
-                }
+                cmd.add("python3");
+		cmd.add("./aux-scripts/wordcount.py");
                 for(String passage : passages) {
                     cmd.add(passage);
                 }
-                String cmdResult = runShellCmd(cmd);
+                cmd.add("--path-to-book-binary");
+		cmd.add(bookPath);
+                if (filterStopwords) { //TODO: make the stop word list specifiable instead of plain boolean
+                    String stopwordList = "./stopwords/simple.txt";
+                    cmd.add("--filter-stopwords");
+		    cmd.add(stopwordList);
+                }
+                String cmdResult = runShellCmd(cmd).strip();
 
-                resp.body = cmdResult.strip().getBytes();
+                resp.body = cmdResult.getBytes();
                 mimeType = "application/json";
                 success = true;
                 break;
@@ -177,7 +179,6 @@ class RequestHandler {
         for (int i = 0; i < cmdArrayList.size(); ++i) {
             cmd[i] = cmdArrayList.get(i);
         }
-        System.out.println(Arrays.toString(cmd));
         try {
             Process process = Runtime.getRuntime().exec(cmd);
             return readStringFromProcessStdout(process);
