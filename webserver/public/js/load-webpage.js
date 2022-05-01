@@ -53,7 +53,7 @@ function parseBookText_KeepOrderAndUniqueness(bookTextSelection) { // TODO: fini
         } else {
             verses.append({
                 verseNumber: line.verseNumber,
-                verseText = line.verseText
+                verseText: line.verseText
             })
         }
     }
