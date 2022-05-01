@@ -18,37 +18,39 @@ import java.util.StringTokenizer;
 
 public class BibleServer implements Runnable { // Each Client Connection will be managed in a dedicated Thread
 
-	public static final String WEB_ROOT = "./public/";
-
 	public static void main(String[] args) {
-        if ( args.length == 0 ) {
-            PORT = DEFAULT_PORT;
-        } else {
-            for (int i = 0; i < args.length; ++i) {
-                switch(args[i]) {
-                    case "-p": case "--port":
-                        if (i == args.length-1) {
-                            usage();
-                        }
-                        try {
-                            PORT = Integer.parseInt(args[++i]);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            System.exit(2);
-                        }
-                        
-                        break;
-                    default:
-                        usage();
-                }
-            }
-        }
-
-
+		PORT = DEFAULT_PORT;
+		WEB_ROOT = DEFAULT_WEB_ROOT;
+		for (int i = 0; i < args.length; ++i) {
+		    switch(args[i]) {
+		        case "-p": case "--port":
+		            if (i == args.length-1) {
+		                usage();
+		            }
+		            try {
+		                PORT = Integer.parseInt(args[++i]);
+		            } catch (Exception e) {
+		                e.printStackTrace();
+		                System.exit(2);
+		            }
+		            break;
+		        case "-r": case "--web-root":
+		    	if (i == args.length-1) {
+		    	   usage();
+		    	}
+		    	WEB_ROOT = args[++i];
+		    	break;
+		        default:
+		            usage();
+		    }
+		}
 		// have some code in here that ensures that all necessary files are in the right place
 		startServer();
 	}
-    static int DEFAULT_PORT = 8080;
+
+	public static final String DEFAULT_WEB_ROOT = "./public/";
+	static int DEFAULT_PORT = 8080;
+	public static String WEB_ROOT;
 	static int PORT; // port to listen connection
 	static final boolean verbose = true; // verbose mode
 	private Socket connect; // Client Connection via Socket Class
@@ -59,7 +61,7 @@ public class BibleServer implements Runnable { // Each Client Connection will be
 
     private static void usage() {
         System.out.println (
-            "usage: java BibleServer [ -p|--port PORT_NUMBER (default 8080) ]"
+            "usage: java BibleServer [ -p|--port PORT_NUMBER (default" + DEFAULT_PORT + ") ] [ -r|--web-root WEB_ROOT (default " + DEFAULT_WEB_ROOT + ")]"
         );
         System.exit(2);
     }
@@ -67,7 +69,10 @@ public class BibleServer implements Runnable { // Each Client Connection will be
 	private static void startServer() {
 		try {
 			ServerSocket serverConnect = new ServerSocket(PORT);
-			System.out.println("Server started.\nListening for connections on port : " + PORT + " ...\n");
+			System.out.println("Server started.");
+			System.out.println("Listening for connections on port : " + PORT + " ...");
+			System.out.println("Web Root : " + WEB_ROOT + " ...");
+			System.out.println();
 
 			while (true) {
 				BibleServer serverJob = new BibleServer(serverConnect.accept());
