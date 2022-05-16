@@ -1,65 +1,57 @@
 BEGIN {
-    # book names manually retreieved from
-    #   https://www.chabad.org/library/bible_cdo/aid/63255/jewish/The-Bible-with-Rashi.htm
-	fullnames["gen"] = "Genesis"
-	fullnames["exo"] = "Exodus"
-	fullnames["lev"] = "Leviticus"
-	fullnames["num"] = "Numbers"
-	fullnames["deu"] = "Deuteronomy"
-	fullnames["jos"] = "Joshua"
-	fullnames["jdg"] = "Judges"
-	fullnames["sa1"] = "1 Samuel"
-	fullnames["sa2"] = "2 Samuel"
-	fullnames["kg1"] = "1 Kings"
-	fullnames["kg2"] = "2 Kings"
-	fullnames["isa"] = "Isaiah"
-	fullnames["jer"] = "Jeremiah"
-	fullnames["eze"] = "Ezekiel"
-	fullnames["hos"] = "Hosea"
-	fullnames["joe"] = "Joel"
-	fullnames["amo"] = "Amos"
-	fullnames["oba"] = "Obadiah"
-	fullnames["jon"] = "Jonah"
-	fullnames["mic"] = "Micah"
-	fullnames["nah"] = "Nahum"
-	fullnames["hab"] = "Habakkuk"
-	fullnames["zep"] = "Zephaniah"
-	fullnames["hag"] = "Haggai"
-	fullnames["zac"] = "Zechariah"
-	fullnames["mal"] = "Malachi"
-	fullnames["psa"] = "Psalms"
-	fullnames["pro"] = "Proverbs"
-	fullnames["job"] = "Job"
-	fullnames["sol"] = "Song of Songs"
-	fullnames["rut"] = "Ruth"
-	fullnames["lam"] = "Lamentations"
-	fullnames["ecc"] = "Ecclesiastes"
-	fullnames["est"] = "Esther"
-	fullnames["dan"] = "Daniel"
-	fullnames["ezr"] = "Ezra"
-	fullnames["neh"] = "Nehemiah"
-	fullnames["ch1"] = "1 Chronicles"
-	fullnames["ch2"] = "2 Chronicles"
-    bookNumber = 0
-    currentBook = ""
-    print "name\tabbr\tbookNum\tchapter\tverse\ttext"
+
+    booknames["gen"] = "Genesis" 
+    booknames["exo"] = "Exodus" 
+    booknames["lev"] = "Leviticus" 
+    booknames["num"] = "Numbers" 
+    booknames["deu"] = "Deuteronomy" 
+    booknames["jos"] = "Joshua" 
+    booknames["jdg"] = "Judges" 
+    booknames["sa1"] = "1 Samuel" 
+    booknames["sa2"] = "2 Samuel" 
+    booknames["kg1"] = "1 Kings" 
+    booknames["kg2"] = "2 Kings" 
+    booknames["jer"] = "Jeremiah" 
+    booknames["eze"] = "Ezekiel" 
+    booknames["hos"] = "Hosea" 
+    booknames["joe"] = "Joel" 
+    booknames["amo"] = "Amos" 
+    booknames["oba"] = "Obadiah" 
+    booknames["jon"] = "Jonah" 
+    booknames["mic"] = "Micah" 
+    booknames["nah"] = "Nahum" 
+    booknames["hab"] = "Habakkuk" 
+    booknames["zep"] = "Zephaniah" 
+    booknames["hag"] = "Haggai" 
+    booknames["zac"] = "Zechariah" 
+    booknames["mal"] = "Malachi" 
+    booknames["psa"] = "Psalms" 
+    booknames["pro"] = "Proverbs" 
+    booknames["job"] = "Job" 
+    booknames["sol"] = "Song of Solomon" 
+    booknames["rut"] = "Ruth" 
+    booknames["lam"] = "Lamentations" 
+    booknames["ecc"] = "Ecclesiastes" 
+    booknames["est"] = "Esther" 
+    booknames["dan"] = "Daniel" 
+    booknames["ezr"] = "Ezra" 
+    booknames["neh"] = "Nehemiah" 
+    booknames["ch1"] = "1 Chronicles" 
+    booknames["ch2"] = "2 Chronicles" 
+
+    FS="|"
+
+    booknum = 0
+    current_book = ""
+
+    print "book\tabbr\tbooknum\tchapter\tverse\ttext"
 }
 {
-    # expected line format:
-    #   bookAbbr|chapter|verse|text
-    FS="|"
-    bookAbbr = $1
-    bookName = fullnames[bookAbbr]
-    chapter  = $2
-    verse    = $3
-    text     = $4
-    if (currentBook != bookName) {
-        currentBook = bookName
-        bookNumber = bookNumber + 1
-    }
-    print bookName"\t"bookAbbr"\t"bookNumber"\t"chapter"\t"verse"\t"text
-}
-END {
+    if ($1 != current_book)
+        booknum += 1
+    if ($1 != current_book)
+        current_book = $1
 
-
+    print ""(booknames[$1])"\t"$1"\t"(booknum)"\t"$2"\t"$3"\t"$4""
 }
+
