@@ -1,3 +1,5 @@
+var CURRENT_SELECTION = null;
+
 function httpGetAsync(theUrl, callback)
 { // thanks to https://stackoverflow.com/questions/247483/http-get-request-in-javascript
     var xmlHttp = new XMLHttpRequest();
@@ -9,7 +11,7 @@ function httpGetAsync(theUrl, callback)
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
     xmlHttp.send(null);
 }
-function parseBookText(bookText) {
+function parseBibleText(bookText) {
     return bookText.split('\n').reduce(
         (parsedBook, line) => {
             // bookText line format: 'Book\tChapter:Verse\tVerseText'
@@ -58,34 +60,13 @@ function parseBookText_KeepOrderAndUniqueness(bookTextSelection) { // TODO: fini
         }
     }
 }
-function postProcessBibleTextToHTMLTable__NOTREADYTOUSEYET(text) {
-    // this function is not done, I've only copied the code from postProcessBibleTextToHTMLList and started to make a few small changes
-    let str = '';
-    str += '<table>'
-    for (const [book, chapters] of Object.entries(parseBookText(text))) {
-        str += '<li><b>' + book + '</b>'
-        str += '<ul>'
-        for (const [chapter,verses] of Object.entries(chapters)) {
-            str += '<li><b>Chapter ' + chapter + ':</b>'
-            str += '<ul>'
-            for (const [verse,verseText] of Object.entries(verses)) {
-                str += '<li>'
-                str += '<b>'+verse+'.</b> ' + verseText
-                str += '</li>'
-            }
-            str += '</ul>'
-            str += '</li>'
-        }
-        str += '</ul>'
-        str += '</li>'
-    }
-    str += '</table>'
-    return str // text
+function postProcessBibleTextToHTMLTable(text) {
+    return null
 }
-function postProcessBibleTextToHTMLList(text) {
+function parsedBibleTextToHTMLList(parsedBookText) {
     let str = '';
     str += '<ul>'
-    for (const [book, chapters] of Object.entries(parseBookText(text))) {
+    for (const [book, chapters] of Object.entries( parsedBookText )) {
         str += '<li><b>' + book + '</b>'
         str += '<ul>'
         for (const [chapter,verses] of Object.entries(chapters)) {
@@ -103,8 +84,8 @@ function postProcessBibleTextToHTMLList(text) {
     str += '</ul>'
     return str
 }
-function showBibleText(text) {
-    document.getElementById('contentSpot').innerHTML = postProcessBibleTextToHTMLList(text)
+function renderBibleSelection(selection) {
+    document.getElementById('contentSpot').innerHTML = parsedBibleTextToHTMLList(selection)
 }
 function showText(text) {
     // console.log(text)
@@ -138,7 +119,10 @@ function getFullURLFromCmd(cmd) {
 function getBookText(bookrequest) {
     httpGetAsync(
         getFullURLFromCmd(bookrequest),
-        showBibleText
+        (text) => {
+			CURRENT_SELECTION = parseBibleText(text);
+			renderBibleSelection(CURRENT_SELECTION);
+		}
     )
 }
 function validInput(text) {
@@ -158,7 +142,7 @@ document.getElementById('askforhelp').onclick = (
         showText('hello!')
         httpGetAsync(
             getFullURLFromCmd(getBookSelectionName()+' -help'),
-            showText
+			showText
         )
     }
 )
