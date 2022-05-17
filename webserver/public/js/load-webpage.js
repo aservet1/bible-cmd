@@ -128,6 +128,26 @@ function getBookText(bookrequest) {
 function validInput(text) {
 
 }
+function filterVerses(selection, pattern) {
+	if (!pattern)                    return selection
+	if (pattern === null)            return selection
+	if (pattern.trim().length === 0) return selection
+	const regex = new RegExp(pattern, "g")
+
+	const filteredSelection = {}
+    for (const [book, chapters] of Object.entries( selection )) {
+        for (const [chapter,verses] of Object.entries(chapters)) {
+            for (const [verse,verseText] of Object.entries(verses)) {
+				if (verseText.match(regex)) {
+					if (!filteredSelection[book])          { filteredSelection[book]          = {} }
+					if (!filteredSelection[book][chapter]) { filteredSelection[book][chapter] = {} }
+					filteredSelection[book][chapter][verse] = verseText
+				}
+			}
+        }
+    }
+    return filteredSelection
+}
 document.getElementById('askbutton').onclick = (
     function() {
         showText('waiting for content...')
@@ -135,6 +155,13 @@ document.getElementById('askbutton').onclick = (
         // console.log(text)
         // TODO: evalate text input for validity, 
         getBookText(text)
+    }
+)
+document.getElementById('filterbutton').onclick = (
+    function() {
+        let pattern = document.getElementById('filtertext').value
+		console.log(pattern)
+        renderBibleSelection( filterVerses(CURRENT_SELECTION, pattern) )
     }
 )
 document.getElementById('askforhelp').onclick = (

@@ -26,10 +26,16 @@
 			<label for="grb_radio_btn"> Luke Smith's Greek Version </label>
 		</div>
 		<div id='inputarea'>
-			<input id='asktext' type='text' placeholder='i.e. Mark 1:1-15' />
+			<div>
+				<input id='asktext' type='text' placeholder='i.e. Mark 1:1-15' />
+				<input id='askbutton' type='button' value='get text' />
+			</div>
+			<div>
+				<input id='filtertext' type='text' placeholder='regex to filter matching verses' />
+				<input id='filterbutton' type='button' value='filter' />
+			</div>
 		</div>
 		<div id='ask-buttons' >
-			<input id='askbutton' type='button' value='get text' />
 			<input id='askforhelp' type='button' value='help' />
 			<input id='askforbooks' type='button' value='books available' />
 			<input id='askformetainfo' type='button' value='(coming some day) meta information / analysis about this passage' />
