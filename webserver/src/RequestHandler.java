@@ -30,7 +30,7 @@ class Response {
 }
 class RequestHandler {
 
-    public static Response handle(String fileRequested) {
+    public static Response handle(String pathAndQuery) {
 
         Response resp = new Response();
         boolean success;
@@ -44,7 +44,7 @@ class RequestHandler {
         String fillerPrefix = "https://localhost:1111";
         URL url = null;
         try {
-            url = new URL(fillerPrefix + fileRequested);
+            url = new URL(fillerPrefix + pathAndQuery);
         } catch (MalformedURLException ex) {
             ex.printStackTrace();
             //@TODO some sort of error message / status for bad url? or just 404 not found?
@@ -120,12 +120,11 @@ class RequestHandler {
         return resp;
     }
 
-    private static byte[] getPageBytes(String fileRequested) {
-        String filePath = BibleServer.WEB_ROOT + fileRequested;
+    private static byte[] getPageBytes(String fileName) {
         byte[] contents = null;
         FileInputStream inputStream = null;
         try {
-            File fileObject = new File(filePath);
+            File fileObject = new File(BibleServer.WEB_ROOT + fileName);
             contents = new byte[(int)fileObject.length()];
             inputStream = new FileInputStream(fileObject);
             inputStream.read(contents);

@@ -76,11 +76,11 @@ public class BibleServer implements Runnable { // Each Client Connection will be
 
 			while (true) {
 				BibleServer serverJob = new BibleServer(serverConnect.accept());
-				if (verbose) System.out.println("Connecton opened. (" + new Date() + ")");
 				Thread serverJobThread = new Thread(serverJob);
 				serverJobThread.start();
 			}
 			//serverConnect.close(); -- unreachable
+
 		} catch (IOException e) {
 			System.err.println("Server Connection error : " + e.getMessage());
 		}
@@ -93,6 +93,8 @@ public class BibleServer implements Runnable { // Each Client Connection will be
 		PrintWriter headerOut = null;
 		BufferedOutputStream dataOut = null;
 
+		if (verbose) System.out.println("Connecton opened. (" + new Date() + ")");
+
 		try {
 			in = new BufferedReader(new InputStreamReader(connect.getInputStream())); // we read characters from the client via input stream on the socket
 			headerOut = new PrintWriter(connect.getOutputStream()); // we get character output stream to client (for headers)
@@ -104,10 +106,14 @@ public class BibleServer implements Runnable { // Each Client Connection will be
 			// we parse the request with a string tokenizer
 			StringTokenizer parse = new StringTokenizer(input);
 			String method = parse.nextToken().toUpperCase(); // we get the HTTP method of the client
-			String fileRequested = parse.nextToken().toLowerCase();
+			String pathAndQuery = parse.nextToken().toLowerCase();
+			if (verbose) {
+				System.out.printf("Request path and query: %s\n", pathAndQuery);
+			}
+			
 
 			if (method.equals("GET")) { // we only support GET method
-				Response resp = RequestHandler.handle(fileRequested);
+				Response resp = RequestHandler.handle(pathAndQuery);
 				String header = resp.header;
 				byte[] body   = resp.body;
 
