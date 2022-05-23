@@ -124,12 +124,16 @@ public class BibleServer implements Runnable { // Each Client Connection will be
 						bodyOutputLimit = body.length;
 						bodyOutputQualifier = "";
 					}
+					String extraDashes = "";
+					for(int i = 0; i < bodyOutputQualifier.length(); ++i){
+						extraDashes += "-";
+					}
 					String bodyOutput = new String(body).substring(0,bodyOutputLimit);
 					System.out.println("----- GET Response Header -----");
 					System.out.println(header);
 					System.out.println("----- GET Response Body " + bodyOutputQualifier + "-------");
 					System.out.println(bodyOutput);
-					System.out.println("-------------------------------");
+					System.out.println("-------------------------------" + extraDashes);
 				}
 
 				headerOut.println(header);
