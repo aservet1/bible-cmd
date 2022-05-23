@@ -112,10 +112,17 @@ public class BibleServer implements Runnable { // Each Client Connection will be
 				byte[] body   = resp.body;
 
 				if (verbose) {
+					int bodyOutputLimit = 150; // statically set this to whatever max output youd like to see of the body. or extend your code to parameterize / dynamically determine this value
+					String bodyOutputQualifier = "(first " + bodyOutputLimit + " bytes) ";
+					if (body.length < bodyOutputLimit) {
+						bodyOutputLimit = body.length;
+						bodyOutputQualifier = "";
+					}
+					String bodyOutput = new String(body).substring(0,bodyOutputLimit);
 					System.out.println("----- GET Response Header -----");
 					System.out.println(header);
-					System.out.println("----- GET Response Body -------");
-					System.out.println(new String(body));
+					System.out.println("----- GET Response Body " + bodyOutputQualifier + "-------");
+					System.out.println(bodyOutput);
 					System.out.println("-------------------------------");
 				}
 
