@@ -1,3 +1,5 @@
+var CURRENT_SELECTION = null;
+
 function httpGetAsync(theUrl, callback)
 { // thanks to https://stackoverflow.com/questions/247483/http-get-request-in-javascript
     var xmlHttp = new XMLHttpRequest();
@@ -9,7 +11,7 @@ function httpGetAsync(theUrl, callback)
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
     xmlHttp.send(null);
 }
-function parseBookText(bookText) {
+function parseBibleText(bookText) {
     return bookText.split('\n').reduce(
         (parsedBook, line) => {
             // bookText line format: 'Book\tChapter:Verse\tVerseText'
@@ -58,34 +60,13 @@ function parseBookText_KeepOrderAndUniqueness(bookTextSelection) { // TODO: fini
         }
     }
 }
-function postProcessBibleTextToHTMLTable__NOTREADYTOUSEYET(text) {
-    // this function is not done, I've only copied the code from postProcessBibleTextToHTMLList and started to make a few small changes
-    let str = '';
-    str += '<table>'
-    for (const [book, chapters] of Object.entries(parseBookText(text))) {
-        str += '<li><b>' + book + '</b>'
-        str += '<ul>'
-        for (const [chapter,verses] of Object.entries(chapters)) {
-            str += '<li><b>Chapter ' + chapter + ':</b>'
-            str += '<ul>'
-            for (const [verse,verseText] of Object.entries(verses)) {
-                str += '<li>'
-                str += '<b>'+verse+'.</b> ' + verseText
-                str += '</li>'
-            }
-            str += '</ul>'
-            str += '</li>'
-        }
-        str += '</ul>'
-        str += '</li>'
-    }
-    str += '</table>'
-    return str // text
+function postProcessBibleTextToHTMLTable(text) {
+    return null
 }
-function postProcessBibleTextToHTMLList(text) {
+function parsedBibleTextToHTMLList(parsedBookText) {
     let str = '';
     str += '<ul>'
-    for (const [book, chapters] of Object.entries(parseBookText(text))) {
+    for (const [book, chapters] of Object.entries( parsedBookText )) {
         str += '<li><b>' + book + '</b>'
         str += '<ul>'
         for (const [chapter,verses] of Object.entries(chapters)) {
@@ -103,8 +84,8 @@ function postProcessBibleTextToHTMLList(text) {
     str += '</ul>'
     return str
 }
-function showBibleText(text) {
-    document.getElementById('contentSpot').innerHTML = postProcessBibleTextToHTMLList(text)
+function renderBibleSelection(selection) {
+    document.getElementById('contentSpot').innerHTML = parsedBibleTextToHTMLList(selection)
 }
 function showText(text) {
     // console.log(text)
@@ -138,11 +119,33 @@ function getFullURLFromCmd(cmd) {
 function getBookText(bookrequest) {
     httpGetAsync(
         getFullURLFromCmd(bookrequest),
-        showBibleText
+        (text) => {
+			CURRENT_SELECTION = parseBibleText(text);
+			renderBibleSelection(CURRENT_SELECTION);
+		}
     )
 }
 function validInput(text) {
 
+}
+function filterVerses(selection, pattern) {
+	if (!pattern)                    return selection
+	if (pattern === null)            return selection
+	if (pattern.trim().length === 0) return selection
+	const regex = new RegExp(pattern, "g")
+	const filteredSelection = {}
+	for (const [book, chapters] of Object.entries( selection )) {
+ 		for (const [chapter,verses] of Object.entries(chapters)) {
+ 			for (const [verse,verseText] of Object.entries(verses)) {
+				if (verseText.match(regex)) {
+					if (!filteredSelection[book])          { filteredSelection[book]          = {} }
+					if (!filteredSelection[book][chapter]) { filteredSelection[book][chapter] = {} }
+					filteredSelection[book][chapter][verse] = verseText
+				}
+			}
+		}
+	}
+	return filteredSelection
 }
 document.getElementById('askbutton').onclick = (
     function() {
@@ -153,12 +156,19 @@ document.getElementById('askbutton').onclick = (
         getBookText(text)
     }
 )
+document.getElementById('filterbutton').onclick = (
+    function() {
+        let pattern = document.getElementById('filtertext').value
+	// console.log(pattern)
+        renderBibleSelection( filterVerses(CURRENT_SELECTION, pattern) )
+    }
+)
 document.getElementById('askforhelp').onclick = (
     function() {
         showText('hello!')
         httpGetAsync(
             getFullURLFromCmd(getBookSelectionName()+' -help'),
-            showText
+			showText
         )
     }
 )
@@ -172,9 +182,34 @@ document.getElementById('askforbooks').onclick = (
     }
 )
 document.getElementById("kjv_radio_btn").checked = true;
+
+var HISTORY_INDEX = 0
+const HISTORY = []
+const HISTORY_MAX_SIZE = 256
+document.getElementById('asktext').onkeydown = (
+	// https://tutorial.eyehunts.com/js/javascript-keycode-list-event-which-event-key-event-code-values/
+	// left arrow	37	ArrowLeft	ArrowLeft
+	// up arrow	38	ArrowUp	ArrowUp
+	// right arrow	39	ArrowRight	ArrowRight
+	// down arrow	40	ArrowDown	ArrowDown
+	function(e) {
+		if (e.which == 37) { // left arrow
+		}
+		if (e.which == 39) { // right arrow
+		}
+		if (e.which == 38) { // up arrow
+			HISTORY_INDEX++
+			console.log(HISTORY_INDEX)
+		}
+		if (e.which == 40) { // down arrow
+			HISTORY_INDEX--
+			console.log(HISTORY_INDEX)
+		}
+	}
+)
 document.getElementById('asktext').onkeypress = (
 	function(e) {
-		if (e.which == 13) {
+		if (e.which == 13) { // enter
 			showText('waiting for content...')
 			getBookText(document.getElementById('asktext').value)
 		}
