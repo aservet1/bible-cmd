@@ -133,20 +133,19 @@ function filterVerses(selection, pattern) {
 	if (pattern === null)            return selection
 	if (pattern.trim().length === 0) return selection
 	const regex = new RegExp(pattern, "g")
-
 	const filteredSelection = {}
-    for (const [book, chapters] of Object.entries( selection )) {
-        for (const [chapter,verses] of Object.entries(chapters)) {
-            for (const [verse,verseText] of Object.entries(verses)) {
+	for (const [book, chapters] of Object.entries( selection )) {
+ 		for (const [chapter,verses] of Object.entries(chapters)) {
+ 			for (const [verse,verseText] of Object.entries(verses)) {
 				if (verseText.match(regex)) {
 					if (!filteredSelection[book])          { filteredSelection[book]          = {} }
 					if (!filteredSelection[book][chapter]) { filteredSelection[book][chapter] = {} }
 					filteredSelection[book][chapter][verse] = verseText
 				}
 			}
-        }
-    }
-    return filteredSelection
+		}
+	}
+	return filteredSelection
 }
 document.getElementById('askbutton').onclick = (
     function() {
@@ -160,7 +159,7 @@ document.getElementById('askbutton').onclick = (
 document.getElementById('filterbutton').onclick = (
     function() {
         let pattern = document.getElementById('filtertext').value
-		console.log(pattern)
+	// console.log(pattern)
         renderBibleSelection( filterVerses(CURRENT_SELECTION, pattern) )
     }
 )
@@ -183,9 +182,34 @@ document.getElementById('askforbooks').onclick = (
     }
 )
 document.getElementById("kjv_radio_btn").checked = true;
+
+var HISTORY_INDEX = 0
+const HISTORY = []
+const HISTORY_MAX_SIZE = 256
+document.getElementById('asktext').onkeydown = (
+	// https://tutorial.eyehunts.com/js/javascript-keycode-list-event-which-event-key-event-code-values/
+	// left arrow	37	ArrowLeft	ArrowLeft
+	// up arrow	38	ArrowUp	ArrowUp
+	// right arrow	39	ArrowRight	ArrowRight
+	// down arrow	40	ArrowDown	ArrowDown
+	function(e) {
+		if (e.which == 37) { // left arrow
+		}
+		if (e.which == 39) { // right arrow
+		}
+		if (e.which == 38) { // up arrow
+			HISTORY_INDEX++
+			console.log(HISTORY_INDEX)
+		}
+		if (e.which == 40) { // down arrow
+			HISTORY_INDEX--
+			console.log(HISTORY_INDEX)
+		}
+	}
+)
 document.getElementById('asktext').onkeypress = (
 	function(e) {
-		if (e.which == 13) {
+		if (e.which == 13) { // enter
 			showText('waiting for content...')
 			getBookText(document.getElementById('asktext').value)
 		}
