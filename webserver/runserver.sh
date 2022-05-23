@@ -11,5 +11,5 @@ if [ "$1" = "--rebuild" ] || [ "$1" = "-r" ] ; then
 fi
 
 mkdir -p "./server-logs"
-java $pkgname.BibleServer -p 8080 -r "./public" \
+java $pkgname.BibleServer --port 8080 --web-root "./public" \
     | tee "./server-logs/server_log_started_on_$( date | tr ' ' '-' ).log"
