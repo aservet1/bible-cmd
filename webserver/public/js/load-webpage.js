@@ -1,4 +1,5 @@
 var CURRENT_SELECTION = null;
+const SERVER_URL = "http://149.28.52.2:8080"
 
 function httpGetAsync(theUrl, callback)
 { // thanks to https://stackoverflow.com/questions/247483/http-get-request-in-javascript
@@ -109,7 +110,7 @@ function getBookSelectionName() {
     return selection
 }
 function getFullURLFromCmd(cmd) {
-    return "http://149.28.52.2:8080/api/booktext?cmd=" + (
+    return SERVER_URL + "/api/booktext?cmd=" + (
         cmd .split(';')
 	    	.map(e => getBookSelectionName() + ' ' + e.trim())
 	    .join(';')
@@ -181,7 +182,7 @@ document.getElementById('askforbooks').onclick = (
         )
     }
 )
-document.getElementById("kjv_radio_btn").checked = true;
+document.getElementById("nasb_radio_btn").checked = true;
 
 var HISTORY_INDEX = 0
 const HISTORY = []
