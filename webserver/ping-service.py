@@ -1,3 +1,6 @@
+# Sample on how to get web content with Python. Currently pings a service that doesn't exist (this is from a previous project)
+# but it shows how to do it and is good enough reference / future-adaptable code
+
 import requests
 import json
 
