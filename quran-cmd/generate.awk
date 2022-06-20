@@ -5,31 +5,27 @@ BEGIN {
     print ""
     print "quran_verse quran_verses[] = {"
 
-    book_count = 0
+    verse_count = 0
 }
 
 {
-    FS = "\t"
-    Sura = $1 
-    Ayat = $2 
-    Text = $3 
-    printf("    {%d, %d, \"%s\"},\n", Sura, Ayat, Text)
-}
+	sub(/#.*$/ , "", $0)
+	sub(/\s*$/ , "", $0)
+	sub(/^\s*$/, "", $0)
 
-#TODO: this is half done, it's still working from being copied from the bible's generate.awk
+	if (length($0) > 0) {
+		split($0,parts,"\t")
+		Surah = parts[1]
+		Ayat  = parts[2]
+		Text  = parts[3]
+		printf("    {%d, %d, \"%s\"},\n", Surah, Ayat, Text)
+		verse_count++
+	}
+}
 
 END {
     print "};"
     print ""
-    printf("int quran_verses_length = %d;\n", NR)
-    print ""
-
-    print "quran_book quran_books[] = {"
-    for (i = 1; i <= book_count; i++) {
-        printf("    {%d, \"%s\", \"%s\"},\n", i, book_names[i], book_abbrs[i])
-    }
-    print "};"
-
-    print ""
-    printf("int quran_books_length = %d;\n", book_count)
+    printf("int quran_verses_length = %d;\n", verse_count)
 }
+
