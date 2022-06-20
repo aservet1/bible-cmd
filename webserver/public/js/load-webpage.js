@@ -191,7 +191,7 @@ document.getElementById('askforbooks').onclick = (
         )
     }
 )
-document.getElementById("nasb_radio_btn").checked = true;
+document.getElementById("kjv_radio_btn").checked = true;
 
 var HISTORY_INDEX = 0
 const HISTORY = []
