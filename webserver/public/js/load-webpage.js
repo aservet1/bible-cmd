@@ -157,6 +157,15 @@ document.getElementById('askbutton').onclick = (
         getBookText(text)
     }
 )
+document.getElementById('askbutton_pdf').onclick = (
+	function() {
+		const url      = getFullURLFromCmd(document.getElementById('asktext').value).replace("/api/booktext","/api/latexdoc")
+		const tempLink = document.createElement('a')
+		tempLink.href  = url
+		tempLink.click()
+		tempLink.parentNode.removeChild(tempLink)
+	}
+)
 document.getElementById('filterbutton').onclick = (
     function() {
         let pattern = document.getElementById('filtertext').value
