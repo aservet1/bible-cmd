@@ -1,0 +1,187 @@
+./bin/grb mark 15
+./bin/grb mark 16
+./bin/kjv 1 cor
+./bin/kjv 1 cor 1
+./bin/kjv 1 cor 18
+./bin/kjv 1 cor 3
+./bin/kjv 1 cor 3,4
+./bin/kjv 1 cor 3-4
+./bin/kjv 1 corinthians 1
+./bin/kjv 1 corinthians 18
+./bin/kjv 1 john 1
+./bin/kjv 1 peter
+./bin/kjv 1 peter; ./bin/kjv 2peter
+./bin/kjv 1 tim 3:7
+./bin/kjv 2 peter 3
+./bin/kjv 2tim 3:16
+./bin/kjv acts
+./bin/kjv acts 13
+./bin/kjv acts 17
+./bin/kjv acts9
+./bin/kjv dan 7
+./bin/kjv daniel
+./bin/kjv daniel 6
+./bin/kjv daniel 7
+./bin/kjv daniel 9
+./bin/kjv daniel 9-10
+./bin/kjv deut
+./bin/kjv deut 22:5
+./bin/kjv deuteronomy
+./bin/kjv ecclesiastes 1:6
+./bin/kjv exo
+./bin/kjv exo12-13
+./bin/kjv ezekiel 23
+./bin/kjv ezekiel 26
+./bin/kjv ezekiel 26; ./bin/kjv psalms 22
+./bin/kjv gen 38
+./bin/kjv gen 38:9
+./bin/kjv genesis
+./bin/kjv genesis 1
+./bin/kjv genesis 17
+./bin/kjv genesis 22-23
+./bin/kjv genesis 23
+./bin/kjv genesis 5
+./bin/kjv genesis 9
+./bin/kjv hebrews 6
+./bin/kjv hosea
+./bin/kjv hosea 6
+./bin/kjv hosea 6:2
+./bin/kjv isa52
+./bin/kjv isa 53:4,56,10,11; ./bin/kjv rom 3:23-26; ./bin/kjv 2 cor 5:21; ./bin/kjv gal 3:10,13; ./bin/kjv 1 pet 3:18
+./bin/kjv isa. 53:4-6, 10, 11; ./bin/kjv rom. 3:23-26; ./bin/kjv 2 cor. 5:21; ./bin/kjv gal. 3:10, 13; ./bin/kjv 1 pet. 3:18.
+./bin/kjv isaiah
+./bin/kjv isaiah 40:22
+./bin/kjv isaiah 51-53
+./bin/kjv isaiah 53
+./bin/kjv isaiah 53; ./bin/kjv romans 1
+./bin/kjv isaiah 6
+./bin/kjv isaiah 6:9
+./bin/kjv isaiah 6:9-10
+./bin/kjv isaiah 9
+./bin/kjv jeremiah 25
+./bin/kjv jeremiah 25:8-33
+./bin/kjv jeremiah 25; ./bin/kjv daniel 9
+./bin/kjv jeremiah 25; ./bin/kjv daniel 9-10
+./bin/kjv jeremiah 25; ./bin/kjv ezra 7:11-28
+./bin/kjv job 26:7
+./bin/kjv john
+./bin/kjv leviticus 16
+./bin/kjv luke 14:4-5
+./bin/kjv luke 14:5
+./bin/kjv luke 19
+./bin/kjv luke 24
+./bin/kjv mark
+./bin/kjv mark 1
+./bin/kjv mark 1:1
+./bin/kjv mark 1:1,2
+./bin/kjv mark 1:1-3
+./bin/kjv mark 1:1-3; ./bin/kjv john 1
+./bin/kjv mark 1:1-3; ./bin/kjv john 1:1-3
+./bin/kjv mark 13
+./bin/kjv mark 14:51-51
+./bin/kjv mark 14:51-52
+./bin/kjv mark 16
+./bin/kjv mark 16; ./bin/kjv matthew 28
+./bin/kjv mark 4
+./bin/kjv mark 4:10-12; ./bin/kjv matthew 13:10-17
+./bin/kjv mark 4; ./bin/kjv matthew 13
+./bin/kjv mark 6. 45 - 8. 26
+./bin/kjv mark 6:45 - 8:26
+./bin/kjv matt 21:18-22
+./bin/kjv matt 27:39
+./bin/kjv matt28
+./bin/kjv matthew
+./bin/kjv matthew 13
+./bin/kjv matthew 13; ./bin/kjv isaiah 6
+./bin/kjv matthew 23:29-39; ./bin/kjv matthew 24:1-3
+./bin/kjv matthew 23:29-99; ./bin/kjv matthew 24:1-3
+./bin/kjv matthew 28
+./bin/kjv matthew 28; ./bin/kjv john 20
+./bin/kjv nehamiah
+./bin/kjv nehemiah
+./bin/kjv philemon
+./bin/kjv proverbs 18
+./bin/kjv ps 118
+./bin/kjv psalm 49
+./bin/kjv psalm 82
+./bin/kjv psalms 107
+./bin/kjv psalms 109
+./bin/kjv psalms 109:25
+./bin/kjv psalms 2:12
+./bin/kjv psalms 22
+./bin/kjv psalms 2:21
+./bin/kjv psalms 22:16
+./bin/kjv revelation 14
+./bin/kjv revelation 21:4
+./bin/kjv revelation 21:8
+./bin/kjv revellation 14
+./bin/kjv romans 0
+./bin/kjv romans 1
+./bin/kjv romans 2:12-16
+./bin/kjv romans 5
+./bin/kjv romans 8
+./bin/kjv zechariah 13
+./bin/kjv zechariah 9
+./bin/myapocrypha 1 esdras; ./bin/myapocrypha 2 esdras; ./bin/myapocrypha additions to esther; ./bin/myapocrypha 1 macabees; ./bin/myapocrypha 2 macabees; ./bin/myapocrypha tobit; ./bin/myapocrypha judith; ./bin/myapocrypha wisdom of solomon; ./bin/myapocrypha sirach; ./bin/myapocrypha baruch; ./bin/myapocrypha epistle of jeremiah; ./bin/myapocrypha sussana; ./bin/myapocrypha prayer of azariah; ./bin/myapocrypha prayer of manasseh; ./bin/myapocrypha bel and the dragon; ./bin/myapocrypha laodiceans; ./bin/myapocrypha gospel of peter; ./bin/myapocrypha ascension of isaiah
+./bin/myapocrypha 1 mac 1
+./bin/myapocrypha 1 macabees
+./bin/myapocrypha 1 macabees 1
+./bin/myapocrypha 2 macabees
+./bin/myapocrypha ascension of isaiah
+./bin/myapocrypha aza
+./bin/myapocrypha aza; ./bin/myapocrypha man
+./bin/myapocrypha macabees
+./bin/myapocrypha man
+./bin/myapocrypha mark 4:10-12; ./bin/myapocrypha matthew 13:10-17
+./bin/myapocrypha sirach
+./bin/myapocrypha sus
+./bin/nasb 1 kings
+./bin/nasb acts 1
+./bin/nasb daniel
+./bin/nasb daniel 11
+./bin/nasb daniel 9
+./bin/nasb deuteronomy 18
+./bin/nasb ezekiel 26
+./bin/nasb ezekiel 27
+./bin/nasb ge1
+./bin/nasb genesis
+./bin/nasb genesis 1
+./bin/nasb genesis 1:26; ./bin/nasb pslams 110:1; ./bin/nasb daniel 7:14; ./bin/nasb isaiah 9:6; ./bin/nasb john 1:18; ./bin/nasb colossus 1:13-18, john 1:1-5, ephesians 1:21; ./bin/nasb revelation 5-5; ./bin/nasb revelation 5 12-13; ./bin/nasb revelation 17:14; ./bin/nasb revelation 12:5; ./bin/nasb john 8:32; ./bin/nasb john 8:36
+./bin/nasb genesis 1-3
+./bin/nasb genesis 17
+./bin/nasb genesis 22
+./bin/nasb hosea 6
+./bin/nasb isa52
+./bin/nasb isa54
+./bin/nasb isaiah 2
+./bin/nasb isaiah 51-53
+./bin/nasb isaiah 52-53
+./bin/nasb isaiah 52; ./bin/nasb 53
+./bin/nasb isaiah 53
+./bin/nasb isaiah 53:9
+./bin/nasb isaiah 6
+./bin/nasb jeremiah 31:31-34
+./bin/nasb john
+./bin/nasb john 21
+./bin/nasb john 3
+./bin/nasb leviticus 25
+./bin/nasb leviticus 26
+./bin/nasb luke
+./bin/nasb malachi 3
+./bin/nasb mark
+./bin/nasb mark 1
+./bin/nasb mark 1:1-15
+./bin/nasb mark 1:1-3
+./bin/nasb mark 1:1-4
+./bin/nasb mark 15
+./bin/nasb mark 1; ./bin/nasb mark 15
+./bin/nasb mat1
+./bin/nasb matt 24
+./bin/nasb matthew
+./bin/nasb psalm 16
+./bin/nasb psalm 34
+./bin/nasb psalm 64
+./bin/nasb psalms 64
+./bin/nasb romans 1-2
+./bin/nasb romans 13
+./bin/vul mark 4:10-12; ./bin/vul matthew 13:10-17
