@@ -68,21 +68,22 @@ class RequestHandler {
                 break;
 
             case "/api/latexdoc":
-		File temporaryDir = null;
+		File workingDir = null;
 		try {
-		    temporaryDir = createTempDirectory("make-LaTeX-working-directory");
+		    workingDir = createTempDirectory("make-LaTeX-working-directory");
 		} catch(IOException ex) {
 		    ex.printStackTrace();
 		    System.exit(1); // this whole method gets called from a thread, so I can just kill the tread. TODO: have proper error handling...
 		}
 		
-		File tsvFile = new File(temporaryDir, "text-version.tsv" );
-		File texFile = new File(temporaryDir, "latex-version.tex");
-		File pdfFile = new File(temporaryDir, "latex-version.pdf");
-		File logFile = new File(temporaryDir, "latex-version.log");
-		File auxFile = new File(temporaryDir, "latex-version.aux");
+		// expected files on disk that you will be working with in the process of creating the LaTeX PDF
+		File tsvFile = new File(workingDir, "text-version.tsv" );
+		File texFile = new File(workingDir, "latex-version.tex");
+		File pdfFile = new File(workingDir, "latex-version.pdf");
+		File logFile = new File(workingDir, "latex-version.log");
+		File auxFile = new File(workingDir, "latex-version.aux");
 
-		temporaryDir.deleteOnExit();
+		workingDir.deleteOnExit();
 		tsvFile.deleteOnExit();
 		texFile.deleteOnExit();
 		pdfFile.deleteOnExit();
@@ -106,11 +107,12 @@ class RequestHandler {
 		String pdflatexOutput = runShellCmd(
 		    String.format(
 		        "pdflatex --output-directory %s %s",
-		        temporaryDir.getAbsolutePath(),
+		        workingDir.getAbsolutePath(),
 		        texFile.getAbsolutePath()
 		    )
 		);
 		resp.body = readFileBytes(pdfFile);
+		deleteDirectory(workingDir);
 		mimeType = "text/pdf";
 		success = true;
 		break;
@@ -191,6 +193,18 @@ class RequestHandler {
         if (!generatedDir.mkdir())
             throw new IOException("Failed to create temp directory " + generatedDir.getName());
         return generatedDir;
+    }
+
+    private static void deleteDirectory(File dir) {
+    	for(File f : dir.listFiles()) {
+		if(f.isDirectory()) {
+			deleteDirectory(f);
+		}
+		else {
+			f.delete();
+		}
+	}
+	dir.delete();
     }
 
     private static void writeStringToFile(String content, File file) {             
