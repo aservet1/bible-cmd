@@ -3,9 +3,9 @@ BEGIN {
     print ""
     print "#include \"quran_data.h\""
     print ""
-    print "char* quran[][surah_count] = {"
 
-    surahs        = 0
+    i             = 0
+    surah_count   = 0
     current_surah = 0
 }
 
@@ -23,19 +23,22 @@ BEGIN {
 
         if(Surah != current_surah) {
             if(current_surah != 0) {
-                printf("    },\n")
+                lines[i++] = "    },"
             }
-            printf("    [%d] {\n", Surah)
+            lines[i++] = sprintf("    [%d] {", Surah)
             current_surah = Surah
             ++surah_count
         }
-
-        printf("        [%d] \"%s\",\n", Ayat, Text)
+        lines[i++] = sprintf("        [%d] \"%s\",", Ayat, Text)
     }
 }
 
 END {
-    print "    }"
+    lines[i++] = "    }"
+    printf("char* quran[][%d] = {\n", surah_count)
+    for(j = 0; j < i; ++j) {
+        print lines[j]
+    }
     print "};"
     print ""
     printf("int surah_count = %d;\n", surah_count)
