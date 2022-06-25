@@ -18,6 +18,7 @@ BEGIN {
 		Surah = parts[1]
 		Ayat  = parts[2]
 		Text  = parts[3]
+        gsub(/"/,"\\\"",Text)
 		printf("    {%d, %d, \"%s\"},\n", Surah, Ayat, Text)
 		verse_count++
 	}
