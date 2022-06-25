@@ -3,30 +3,41 @@ BEGIN {
     print ""
     print "#include \"quran_data.h\""
     print ""
-    print "quran_verse quran_verses[] = {"
+    print "char* quran[][surah_count] = {"
 
-    verse_count = 0
+    surahs        = 0
+    current_surah = 0
 }
 
 {
-	sub(/#.*$/ , "", $0)
-	sub(/\s*$/ , "", $0)
-	sub(/^\s*$/, "", $0)
+    sub(/#.*$/ , "", $0)
+    sub(/\s*$/ , "", $0)
+    sub(/^\s*$/, "", $0)
 
-	if (length($0) > 0) {
-		split($0,parts,"\t")
-		Surah = parts[1]
-		Ayat  = parts[2]
-		Text  = parts[3]
+    if (length($0) > 0) {
+        split($0,parts,"\t")
+        Surah = parts[1]
+        Ayat  = parts[2]
+        Text  = parts[3]
         gsub(/"/,"\\\"",Text)
-		printf("    {%d, %d, \"%s\"},\n", Surah, Ayat, Text)
-		verse_count++
-	}
+
+        if(Surah != current_surah) {
+            if(current_surah != 0) {
+                printf("    },\n")
+            }
+            printf("    [%d] {\n", Surah)
+            current_surah = Surah
+            ++surah_count
+        }
+
+        printf("        [%d] \"%s\",\n", Ayat, Text)
+    }
 }
 
 END {
+    print "    }"
     print "};"
     print ""
-    printf("int quran_verses_length = %d;\n", verse_count)
+    printf("int surah_count = %d;\n", surah_count)
 }
 
