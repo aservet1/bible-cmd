@@ -148,6 +148,17 @@ function filterVerses(selection, pattern) {
 	}
 	return filteredSelection
 }
+function selectionToTsv(selection) {
+	const lines = []
+	for(const [book,chapters] of Object.entries(CURRENT_SELECTION)) {
+		for (const [chapter,verses] of Object.entries(chapters)) {
+			for (const [verse, text] of Object.entries(verses)) {
+				lines.push(`${book}\t${chapter}:${verse}\t${text}`)
+			}
+		}
+	}
+	return lines.join('\n')
+}
 document.getElementById('askbutton').onclick = (
     function() {
         showText('waiting for content...')
@@ -187,8 +198,28 @@ document.getElementById('askforbooks').onclick = (
         showText('waiting for books...')
         httpGetAsync(
             getFullURLFromCmd(getBookSelectionName()+' -l'),
-            showText
-        )
+            (responseText) => 
+	    	document.getElementById("contentSpot").innerHTML = (
+			"<ul>\n" +
+				responseText.split('\n').map(e=>`\t<li>${e}</li>`).join('\n') +
+			"\n</ul>"
+		)
+	)
+    }
+)
+
+document.getElementById('export_text').onclick = (
+    function() {
+		if (CURRENT_SELECTION === null) return
+		var data = selectionToTsv(CURRENT_SELECTION);
+        var c = document.createElement("a");
+        c.download = "bible-text.tsv";
+        var t = new Blob(
+            [data],
+            { type: "text/tsv" }
+        );
+        c.href = window.URL.createObjectURL(t);
+        c.click();
     }
 )
 document.getElementById("kjv_radio_btn").checked = true;
