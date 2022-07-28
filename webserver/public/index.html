@@ -1,71 +1,78 @@
 <html>
-	<link rel='stylesheet' href='css/style.css'>
-	<title>the Bible.</title>
-	<body>
-		<h1>the Bible.</h1>
-		<div id='disclaimer'>
-			Disclaimer: I sourced all of the text from places on the internet and didn't put a lot
-			of effort into verifying the authenticity. Don't use this to source Bible text for any
-			important research like textual criticism or similar topics that require precision.
-		</div>
-		<div id='shoutout'>
-			Code for this site built around code from <a href='https://github.com/bontibon/kjv'>this</a> project.
-			My GitHub for this site (and other stuff I'm building from his thing) <a href='https://github.com/aservet1/bible-cmd'>here.</a>
-		</div>
-		<div id='book-options'>
-			<ul style="list-style: none; padding-left: 0px">
-			<div style="font-size: 18px; font-weight: 500">
-				Book Options
-			</div>
-				<li>
-					<input type="radio" id="kjv_radio_btn" value="kjv" name="book_selection" >
-					<label for="kjv_radio_btn"> King James Version </label>
-				</li>
-				<li>
-					<input type="radio" id="nasb_radio_btn" value="nasb" name="book_selection" >
-					<label for="nasb_radio_btn"> New American Standard Bible </label>
-				</li>
-				<li>
-					<input type="radio" id="myapocrypha_radio_btn" value="myapocrypha" name="book_selection" >
-					<label for="myapocrypha_radio_btn"> My Apocrypha Collection </label>
-				</li>
-				<li>
-					<input type="radio" id="vul_radio_btn" value="vul" name="book_selection" >
-					<label for="vul_radio_btn"> Latin Vulgate </label>
-				</li>
-				<li>
-					<input type="radio" id="grb_radio_btn" value="grb" name="book_selection">
-					<label for="grb_radio_btn"> Luke Smith's Greek Version </label>
-				</li>
-			</ul>
-		</div>
-		<div id='inputarea'>
-			<div>
-				<input id='asktext' type='text' placeholder='i.e. Mark 1:1-15' />
-				<input id='askbutton' type='button' value='get text' />
-				<input id='askbutton_pdf' type='button' value='get PDF' />
-			</div>
-			<div>
-				<input id='passage-selection-text' type='text' placeholder='coming soon...select certain passages of the current selection' />
-				<input id='passage-selection-button' type='button' value='sub passage filter' />
-			</div>
-			<div>
-				<input id='filtertext' type='text' placeholder='regex to filter matching verses' />
-				<input id='filterbutton' type='button' value='filter' />
-			</div>
-		</div>
-		<div id='ask-buttons' >
-			<input id='askforhelp' type='button' value='help' />
-			<input id='askforbooks' type='button' value='books available' />
-			<input id='export_text' type='button' value='export text file' />
-			<input id='askformetainfo' type='button' value='(coming some day) meta information / analysis about this passage' />
-		</div>
-		<div id='contentSpot'>
-			This text should be replaced when you make a request
-		</div>
-		<!--a href='tc3_first_website/about_page.html'>My first website</a--> <!-- sample site to flip through to see that everything (well some things) are in order in serving the website -->
-		<script src='js/load-webpage.js'> </script>
-	</body>
+    <link rel='stylesheet' href='css/style.css'>
+    <title>the Bible.</title>
+    <body>
+        <h1>the Bible.</h1>
+        <!--div id='disclaimer'>
+            Disclaimer: I sourced all of the text from places on the internet and didn't put a lot
+            of effort into verifying the authenticity. Don't use this to source Bible text for any
+            important research like textual criticism or similar topics that require precision.
+        </div>
+        <div id='shoutout'>
+            Code for this site built around code from <a href='https://github.com/bontibon/kjv'>this</a> project.
+            My GitHub for this site (and other stuff I'm building from his thing) <a href='https://github.com/aservet1/bible-cmd'>here.</a>
+        </div-->
+
+        <hr/>
+        <div style='float: left; padding-top: 25px; padding-right: 100px; padding-bottom: 5px; padding-left: 15px; border-radius: 4px'>
+            <div id='inputarea'>
+                <div>
+                    <input id='asktext'       type='text'   placeholder='i.e. Mark 1:1-15' />
+                    <input id='askbutton'     type='button' value='get text'               />
+                    <input id='askbutton_pdf' type='button' value='get PDF'                />
+                </div>
+                <div>
+                    <input id='passage-selection-text'   type='text'   placeholder='coming soon...select certain passages of the current selection' />
+                    <input id='passage-selection-button' type='button' value='sub passage filter'                                                   />
+                </div>
+                <div>
+                    <input id='filtertext'   type='text'   placeholder='regex to filter matching verses' />
+                    <input id='filterbutton' type='button' value='filter'                                />
+                </div>
+            </div>
+            <div id='ask-buttons' >
+                <input id='askforhelp'     type='button' value='help'             />
+                <input id='askforbooks'    type='button' value='books available'  />
+                <input id='export_text'    type='button' value='export text file' />
+                <input id='askformetainfo' type='button' value='(coming some day) meta information / analysis about this passage' />
+            </div>
+        </div>
+
+        <div id='book-options'>
+            <ul style="list-style: none; padding-left: 0px">
+                <div style="font-size: 18px; font-weight: 500">
+                    Book Options
+                </div>
+                <li>
+                    <input type="radio" id="kjv_radio_btn" value="kjv" name="book_selection" >
+                    <label for="kjv_radio_btn"> King James Version </label>
+                </li>
+                <li>
+                    <input type="radio" id="nasb_radio_btn" value="nasb" name="book_selection" >
+                    <label for="nasb_radio_btn"> New American Standard Bible </label>
+                </li>
+                <li>
+                    <input type="radio" id="myapocrypha_radio_btn" value="myapocrypha" name="book_selection" >
+                    <label for="myapocrypha_radio_btn"> My Apocrypha Collection </label>
+                </li>
+                <li>
+                    <input type="radio" id="vul_radio_btn" value="vul" name="book_selection" >
+                    <label for="vul_radio_btn"> Latin Vulgate </label>
+                </li>
+                <li>
+                    <input type="radio" id="grb_radio_btn" value="grb" name="book_selection">
+                    <label for="grb_radio_btn"> Luke Smith's Greek Version </label>
+                </li>
+            </ul>
+        </div>
+        <hr/>
+
+        <div id='contentSpot'>
+            This text should be replaced when you make a request
+        </div>
+        <!--a href='tc3_first_website/about_page.html'>My first website</a--> <!-- sample site to flip through to see that everything (well some things) are in order in serving the website -->
+        <script src='js/load-webpage.js'> </script>
+    </body>
 </html>
 
 <!-- number bounds data structure; for info about selecting random chapters and verses
