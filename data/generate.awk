@@ -17,6 +17,7 @@ BEGIN {
 }
 
 {
+    gsub(/"/,"\\\"",$6)
     printf("    {%d, %d, %d, \"%s\"},\n", $3, $4, $5, $6)
     if (!($3 in book_names)) {
         book_names[$3] = $1
