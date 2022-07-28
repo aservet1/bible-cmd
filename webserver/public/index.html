@@ -14,33 +14,9 @@
         </div-->
 
         <hr/>
-        <div style='float: left; padding-top: 25px; padding-right: 100px; padding-bottom: 5px; padding-left: 15px; border-radius: 4px'>
-            <div id='inputarea'>
-                <div>
-                    <input id='asktext'       type='text'   placeholder='i.e. Mark 1:1-15' />
-                    <input id='askbutton'     type='button' value='get text'               />
-                    <input id='askbutton_pdf' type='button' value='get PDF'                />
-                </div>
-                <div>
-                    <input id='passage-selection-text'   type='text'   placeholder='coming soon...select certain passages of the current selection' />
-                    <input id='passage-selection-button' type='button' value='sub passage filter'                                                   />
-                </div>
-                <div>
-                    <input id='filtertext'   type='text'   placeholder='regex to filter matching verses' />
-                    <input id='filterbutton' type='button' value='filter'                                />
-                </div>
-            </div>
-            <div id='ask-buttons' >
-                <input id='askforhelp'     type='button' value='help'             />
-                <input id='askforbooks'    type='button' value='books available'  />
-                <input id='export_text'    type='button' value='export text file' />
-                <input id='askformetainfo' type='button' value='(coming some day) meta information / analysis about this passage' />
-            </div>
-        </div>
-
-        <div id='book-options'>
+        <div id='book-options' style='display: inline-block'>
             <ul style="list-style: none; padding-left: 0px">
-                <div style="font-size: 18px; font-weight: 500">
+                <div style="font-size: 20px; font-weight: 500">
                     Book Options
                 </div>
                 <li>
@@ -64,6 +40,27 @@
                     <label for="grb_radio_btn"> Luke Smith's Greek Version </label>
                 </li>
             </ul>
+        </div>
+        <div id='inputarea' style='display: inline-block'>
+            <div>
+                <input id='asktext'       type='text'   placeholder='i.e. Mark 1:1-15' />
+                <input id='askbutton'     type='button' value='get text'               />
+                <input id='askbutton_pdf' type='button' value='get PDF'                />
+            </div>
+            <div>
+                <input id='passage-selection-text'   type='text'   placeholder='coming soon...select certain passages of the current selection' />
+                <input id='passage-selection-button' type='button' value='sub passage filter'                                                   />
+            </div>
+            <div>
+                <input id='filtertext'   type='text'   placeholder='regex to filter matching verses' />
+                <input id='filterbutton' type='button' value='filter'                                />
+            </div>
+        </div>
+        <div id='ask-buttons' style='display: inline-block'>
+            <div><input id='askforhelp'     type='button' value='help'             /></div>
+            <div><input id='askforbooks'    type='button' value='books available'  /></div>
+            <div><input id='export_text'    type='button' value='export text file' /></div>
+            <div><input id='askformetainfo' type='button' value='(coming some day) meta information / analysis about this passage' /></div>
         </div>
         <hr/>
 
