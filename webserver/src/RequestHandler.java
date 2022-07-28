@@ -16,6 +16,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.FileOutputStream;
+import java.io.BufferedOutputStream;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -54,24 +56,66 @@ class RequestHandler {
 
         switch (url.getPath()) {
             case "/":
-                resp.body = getPageBytes("/index.html");
+                resp.body = readFileBytes(new File(BibleServer.WEB_ROOT, "index.html"));
                 mimeType = "text/html";
                 success = ! resp.body.equals(Pages.NOT_FOUND.getBytes());
                 break;
 
             case "/api/booktext":
-                String[] cmds = (
-                    queryMap.get("cmd").replace("_"," ")
-                ).split(";");
-                ArrayList<String> results = new ArrayList<String>();
-                for(int i = 0; i < cmds.length; ++i) {
-                    String cmdResult = runShellCmd("./bookcmds/" + cmds[i]).strip();
-                    if (cmdResult.length() > 0) results.add(cmdResult);
-                }
-                resp.body = String.join("\n",results).getBytes();
+	    	resp.body = parseAndRunQueryCmd(queryMap.get("cmd")).getBytes();
                 mimeType = "text/plain";
                 success = true;
                 break;
+
+            case "/api/latexdoc":
+		File workingDir = null;
+		try {
+		    workingDir = createTempDirectory("make-LaTeX-working-directory");
+		} catch(IOException ex) {
+		    ex.printStackTrace();
+		    System.exit(1); // this whole method gets called from a thread, so I can just kill the tread. TODO: have proper error handling...
+		}
+		
+		// expected files on disk that you will be working with in the process of creating the LaTeX PDF
+		File tsvFile = new File(workingDir, "text-version.tsv" );
+		File texFile = new File(workingDir, "latex-version.tex");
+		File pdfFile = new File(workingDir, "latex-version.pdf");
+		File logFile = new File(workingDir, "latex-version.log");
+		File auxFile = new File(workingDir, "latex-version.aux");
+
+		workingDir.deleteOnExit();
+		tsvFile.deleteOnExit();
+		texFile.deleteOnExit();
+		pdfFile.deleteOnExit();
+		logFile.deleteOnExit();
+		auxFile.deleteOnExit();
+
+                writeStringToFile(
+		    parseAndRunQueryCmd(queryMap.get("cmd")),
+		    tsvFile
+		);
+		String texText = runShellCmd(
+		    String.format(
+		        "python3 ./aux-scripts/text-to-latex.py %s",
+		        tsvFile.getAbsolutePath()
+		    )
+		);
+		writeStringToFile(
+	            texText,
+		    texFile
+		);
+		String pdflatexOutput = runShellCmd(
+		    String.format(
+		        "pdflatex --output-directory %s %s",
+		        workingDir.getAbsolutePath(),
+		        texFile.getAbsolutePath()
+		    )
+		);
+		resp.body = readFileBytes(pdfFile);
+		deleteDirectory(workingDir);
+		mimeType = "text/pdf";
+		success = true;
+		break;
 
             case "/api/wordcount":
                 boolean filterStopwords = false;
@@ -102,7 +146,7 @@ class RequestHandler {
                 break;
 
             default:
-                resp.body = getPageBytes(url.getPath());
+                resp.body = readFileBytes(new File(BibleServer.WEB_ROOT, url.getPath()));
                 mimeType = getMimeType(url.getPath());
                 success = ! resp.body.equals(Pages.NOT_FOUND.getBytes());
         }
@@ -120,11 +164,66 @@ class RequestHandler {
         return resp;
     }
 
-    private static byte[] getPageBytes(String fileName) {
+    private static String[] parseQueryCmd(String queryCmd) {
+        String[] cmds = queryCmd.split(";");
+	for(int i = 0; i < cmds.length; ++i){
+	    cmds[i] = String.format(
+                "./bookcmds/%s",
+                cmds[i].replace("_"," ")
+            );
+	}
+	return cmds;
+    }
+
+    private static String parseAndRunQueryCmd(String queryCmd) {
+        String[] cmds = parseQueryCmd(queryCmd);
+        StringBuilder result = new StringBuilder();
+        for(String cmd : cmds) {
+            String output = runShellCmd(cmd);
+            result.append(output);
+	    if ('\n' != output.charAt(output.length()-1)) {
+	    	result.append('\n');
+	    }
+        }
+        return result.toString().strip();
+    }
+    private static File createTempDirectory(String prefix) throws IOException {
+        String tempDir = System.getProperty("java.io.tmpdir");
+        File generatedDir = new File(tempDir, prefix + System.nanoTime());
+        if (!generatedDir.mkdir())
+            throw new IOException("Failed to create temp directory " + generatedDir.getName());
+        return generatedDir;
+    }
+
+    private static void deleteDirectory(File dir) {
+    	for(File f : dir.listFiles()) {
+		if(f.isDirectory()) {
+			deleteDirectory(f);
+		}
+		else {
+			f.delete();
+		}
+	}
+	dir.delete();
+    }
+
+    private static void writeStringToFile(String content, File file) {             
+        try {
+	    file.createNewFile();
+	    FileOutputStream     fos = new FileOutputStream(file);
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            bos.write(content.getBytes());
+            bos.close();
+	    fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static byte[] readFileBytes(File fileObject) {
         byte[] contents = null;
         FileInputStream inputStream = null;
         try {
-            File fileObject = new File(BibleServer.WEB_ROOT + fileName);
             contents = new byte[(int)fileObject.length()];
             inputStream = new FileInputStream(fileObject);
             inputStream.read(contents);

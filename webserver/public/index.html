@@ -18,24 +18,21 @@
 				Book Options
 			</div>
 				<li>
+					<input type="radio" id="kjv_radio_btn" value="kjv" name="book_selection" >
+					<label for="kjv_radio_btn"> King James Version </label>
+				</li>
+				<li>
 					<input type="radio" id="nasb_radio_btn" value="nasb" name="book_selection" >
 					<label for="nasb_radio_btn"> New American Standard Bible </label>
 				</li>
 				<li>
-					<input type="radio" id="kjv_radio_btn" value="kjv" name="book_selection" >
-					<label for="kjv_radio_btn"> King James Version </label>
-				</li>
-				<!--br/-->
-				<li>
 					<input type="radio" id="myapocrypha_radio_btn" value="myapocrypha" name="book_selection" >
 					<label for="myapocrypha_radio_btn"> My Apocrypha Collection </label>
 				</li>
-				<!--br/-->
 				<li>
 					<input type="radio" id="vul_radio_btn" value="vul" name="book_selection" >
 					<label for="vul_radio_btn"> Latin Vulgate </label>
 				</li>
-				<!--br/-->
 				<li>
 					<input type="radio" id="grb_radio_btn" value="grb" name="book_selection">
 					<label for="grb_radio_btn"> Luke Smith's Greek Version </label>
@@ -46,6 +43,7 @@
 			<div>
 				<input id='asktext' type='text' placeholder='i.e. Mark 1:1-15' />
 				<input id='askbutton' type='button' value='get text' />
+				<input id='askbutton_pdf' type='button' value='get PDF' />
 			</div>
 			<div>
 				<input id='passage-selection-text' type='text' placeholder='coming soon...select certain passages of the current selection' />
@@ -59,6 +57,7 @@
 		<div id='ask-buttons' >
 			<input id='askforhelp' type='button' value='help' />
 			<input id='askforbooks' type='button' value='books available' />
+			<input id='export_text' type='button' value='export text file' />
 			<input id='askformetainfo' type='button' value='(coming some day) meta information / analysis about this passage' />
 		</div>
 		<div id='contentSpot'>
