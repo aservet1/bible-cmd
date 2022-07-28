@@ -24,7 +24,7 @@ for line in lines:
             currently_printing_list = False
 
         current_book = book
-        current_chapter = None # there is no 'current chapter' that you're working with, since you just started a new book. this line prevents the edge case where you're working with chapter 1 of the previous book, and then you switch books but the next series of verses are from chapter 1 of the new book. if this happens, then the logic won't proceed correctly in the next lines, where you're supposed to print out a subsection header for this chapter and go into 'currentlin printing a list of verses' mode
+        current_chapter = None
         print(r'\section{'+book+'}')
 
     if chapter != current_chapter:
