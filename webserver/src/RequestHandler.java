@@ -62,60 +62,60 @@ class RequestHandler {
                 break;
 
             case "/api/booktext":
-	    	resp.body = parseAndRunQueryCmd(queryMap.get("cmd")).getBytes();
+                resp.body = parseAndRunQueryCmd(queryMap.get("cmd")).getBytes();
                 mimeType = "text/plain";
                 success = true;
                 break;
 
             case "/api/latexdoc":
-		File workingDir = null;
-		try {
-		    workingDir = createTempDirectory("make-LaTeX-working-directory");
-		} catch(IOException ex) {
-		    ex.printStackTrace();
-		    System.exit(1); // this whole method gets called from a thread, so I can just kill the tread. TODO: have proper error handling...
-		}
-		
-		// expected files on disk that you will be working with in the process of creating the LaTeX PDF
-		File tsvFile = new File(workingDir, "text-version.tsv" );
-		File texFile = new File(workingDir, "latex-version.tex");
-		File pdfFile = new File(workingDir, "latex-version.pdf");
-		File logFile = new File(workingDir, "latex-version.log");
-		File auxFile = new File(workingDir, "latex-version.aux");
+                File workingDir = null;
+                try {
+                    workingDir = createTempDirectory("make-LaTeX-working-directory");
+                } catch(IOException ex) {
+                    ex.printStackTrace();
+                    System.exit(1); // this whole method gets called from a thread, so I can just kill the tread. TODO: have proper error handling...
+                }
+                
+                // expected files on disk that you will be working with in the process of creating the LaTeX PDF
+                File tsvFile = new File(workingDir, "text-version.tsv" );
+                File texFile = new File(workingDir, "latex-version.tex");
+                File pdfFile = new File(workingDir, "latex-version.pdf");
+                File logFile = new File(workingDir, "latex-version.log");
+                File auxFile = new File(workingDir, "latex-version.aux");
 
-		workingDir.deleteOnExit();
-		tsvFile.deleteOnExit();
-		texFile.deleteOnExit();
-		pdfFile.deleteOnExit();
-		logFile.deleteOnExit();
-		auxFile.deleteOnExit();
+                workingDir.deleteOnExit();
+                tsvFile.deleteOnExit();
+                texFile.deleteOnExit();
+                pdfFile.deleteOnExit();
+                logFile.deleteOnExit();
+                auxFile.deleteOnExit();
 
                 writeStringToFile(
-		    parseAndRunQueryCmd(queryMap.get("cmd")),
-		    tsvFile
-		);
-		String texText = runShellCmd(
-		    String.format(
-		        "python3 ./aux-scripts/text-to-latex.py %s",
-		        tsvFile.getAbsolutePath()
-		    )
-		);
-		writeStringToFile(
-	            texText,
-		    texFile
-		);
-		String pdflatexOutput = runShellCmd(
-		    String.format(
-		        "pdflatex --output-directory %s %s",
-		        workingDir.getAbsolutePath(),
-		        texFile.getAbsolutePath()
-		    )
-		);
-		resp.body = readFileBytes(pdfFile);
-		deleteDirectory(workingDir);
-		mimeType = "text/pdf";
-		success = true;
-		break;
+                    parseAndRunQueryCmd(queryMap.get("cmd")),
+                    tsvFile
+                );
+                String texText = runShellCmd(
+                    String.format(
+                        "python3 ./aux-scripts/text-to-latex.py %s",
+                        tsvFile.getAbsolutePath()
+                    )
+                );
+                writeStringToFile(
+                        texText,
+                    texFile
+                );
+                String pdflatexOutput = runShellCmd(
+                    String.format(
+                        "pdflatex --output-directory %s %s",
+                        workingDir.getAbsolutePath(),
+                        texFile.getAbsolutePath()
+                    )
+                );
+                resp.body = readFileBytes(pdfFile);
+                deleteDirectory(workingDir);
+                mimeType = "text/pdf";
+                success = true;
+                break;
 
             case "/api/wordcount":
                 boolean filterStopwords = false;
@@ -127,16 +127,16 @@ class RequestHandler {
 
                 ArrayList<String> cmd = new ArrayList<String>();
                 cmd.add("python3");
-		cmd.add("./aux-scripts/wordcount.py");
+                cmd.add("./aux-scripts/wordcount.py");
                 for(String passage : passages) {
                     cmd.add(passage);
                 }
                 cmd.add("--path-to-book-binary");
-		cmd.add(bookPath);
+                cmd.add(bookPath);
                 if (filterStopwords) { //TODO: make the stop word list specifiable instead of plain boolean
                     String stopwordList = "./stopwords/simple.txt";
                     cmd.add("--filter-stopwords");
-		    cmd.add(stopwordList);
+                    cmd.add(stopwordList);
                 }
                 String cmdResult = runShellCmd(cmd).strip();
 
@@ -166,13 +166,13 @@ class RequestHandler {
 
     private static String[] parseQueryCmd(String queryCmd) {
         String[] cmds = queryCmd.split(";");
-	for(int i = 0; i < cmds.length; ++i){
-	    cmds[i] = String.format(
-                "./bookcmds/%s",
-                cmds[i].replace("_"," ")
-            );
-	}
-	return cmds;
+        for(int i = 0; i < cmds.length; ++i){
+            cmds[i] = String.format(
+                    "./bookcmds/%s",
+                    cmds[i].replace("_"," ")
+                );
+        }
+        return cmds;
     }
 
     private static String parseAndRunQueryCmd(String queryCmd) {
@@ -181,9 +181,9 @@ class RequestHandler {
         for(String cmd : cmds) {
             String output = runShellCmd(cmd);
             result.append(output);
-	    if ('\n' != output.charAt(output.length()-1)) {
-	    	result.append('\n');
-	    }
+            if ('\n' != output.charAt(output.length()-1)) {
+                result.append('\n');
+            }
         }
         return result.toString().strip();
     }
@@ -196,25 +196,27 @@ class RequestHandler {
     }
 
     private static void deleteDirectory(File dir) {
-    	for(File f : dir.listFiles()) {
-		if(f.isDirectory()) {
-			deleteDirectory(f);
-		}
-		else {
-			f.delete();
-		}
-	}
-	dir.delete();
+        for(File f : dir.listFiles()) {
+            if(f.isDirectory()) {
+                deleteDirectory(f);
+            }
+            else {
+                f.delete();
+            }
+        }
+        dir.delete();
     }
 
     private static void writeStringToFile(String content, File file) {             
         try {
-	    file.createNewFile();
-	    FileOutputStream     fos = new FileOutputStream(file);
+            file.createNewFile();
+
+            FileOutputStream     fos = new FileOutputStream(file);
             BufferedOutputStream bos = new BufferedOutputStream(fos);
             bos.write(content.getBytes());
+
             bos.close();
-	    fos.close();
+            fos.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
