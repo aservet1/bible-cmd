@@ -85,6 +85,30 @@ function parsedBibleTextToHTMLList(parsedBookText) {
     str += '</ul>'
     return str
 }
+function parsedBibleTextSummary(selection) {
+	if (CURRENT_SELECTION === null) { return null }
+	summary = {}
+    for (const [book, chapters] of Object.entries( selection )) {
+        for (const [chapter,verses] of Object.entries(chapters)) {
+        	if (!summary[book]) {
+				summary[book]  = []
+			}
+			summary[book].push(chapter)
+		}
+    }
+	return summary
+}
+function summaryToHTMLList(summary) {
+		lines = []
+		for (const [book,chapters] of Object.entries(summary)) {
+			lines.push(`<ul> ${book}`)
+			for (const chapter of chapters) {
+				lines.push(`  <li style='display:inline' > Chapter ${chapter} </li>`)
+			}
+			lines.push(`</ul>`)
+		}
+		return (lines.join('\n'))
+}
 function renderBibleSelection(selection) {
     document.getElementById('contentSpot').innerHTML = parsedBibleTextToHTMLList(selection)
 }
